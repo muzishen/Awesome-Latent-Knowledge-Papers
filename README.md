@@ -1,6 +1,94 @@
-## 发现与探测: 探讨模型内部LK的形成规律、空间分布以及表里状态差异。
+# Awesome Latent Knowledge Papers
 
-### [How Do Transformers Learn to Associate Tokens](https://openreview.net/pdf?id=A4Us8jxVGq)
+
+## Paper Overview
+
+### D. 发现与探测 / Discovery & Probing
+
+| ID | Paper | Year | Venue | Notes |
+|---|---|---:|---|---|
+| D-001 | [How Do Transformers Learn to Associate Tokens](#d-001) | 2026 | ICLR 2026 | Token 关联形成 |
+| D-002 | [What Do Language Models Learn and When? The Implicit Curriculum Hypothesis](#d-002) | 2026 | arXiv preprint | 能力隐式课程 |
+| D-003 | [Transformer layers as painters](#d-003) | 2025 | AAAI | 层顺序鲁棒性 |
+| D-004 | [LLM Safety From Within](#d-004) | 2026 | arXiv preprint | 内部安全神经元 |
+| D-005 | [LLMs Encode Harmfulness and Refusal Separately](#d-005) | 2025 | arXiv preprint | 有害性与拒绝分离 |
+| D-006 | [What do your logits know?](#d-006) | 2026 | arXiv preprint | Logits 信息泄露 |
+| D-007 | [Convergent Evolution: How Different Language Models Learn Similar Number Representations](#d-007) | 2026 | arXiv preprint | 数字表示几何 |
+| D-008 | [Task-Driven Subspace Decomposition for Knowledge Sharing and Isolation in LoRA-based Continual Learning](#d-008) | 2026 | ICML 2026 | LoRA 子空间分解 |
+| D-009 | [Last-Layer-Centric Feature Recombination](#d-009) | 2026 | arXiv preprint | 最后层几何锚点 |
+| D-010 | [Beyond Outliers: A Data-Free Layer-wise Mixed-Precision Quantization Approach Driven by Numerical and Structural Dual-Sensitivity](#d-010) | 2026 | arXiv preprint | 结构感知量化 |
+| D-011 | [Large Language Models are Universal Reasoners for Visual Generation](#d-011) | 2026 | arXiv preprint | LLM 引导视觉生成 |
+| D-012 | [The Cylindrical Representation Hypothesis for Language Model Steering](#d-012) | 2026 | arXiv preprint | 圆柱表示 steering |
+| D-013 | [Disentangling Mathematical Reasoning in LLMs](#d-013) | 2026 | arXiv preprint | 数学推理分工 |
+| D-014 | [Learning a Generative Meta-Model of LLM Activations](#d-014) | 2026 | arXiv preprint | 激活流形先验 |
+| D-015 | [Vision Transformers Need More Than Registers](#d-015) | 2026 | arXiv preprint | ViT 背景捷径 |
+| D-016 | [What Happens Inside Agent Memory? Circuit Analysis from Emergence to Diagnosis](#d-016) | 2026 | arXiv preprint | Agent 记忆电路 |
+| D-017 | [Rethinking RL for LLM Reasoning: It’s Sparse Policy Selection, Not Capability Learning](#d-017) | 2026 | arXiv preprint | RL 稀疏策略选择 |
+| D-018 | [A Single Neuron Is Sufficient to Bypass Safety Alignment in Large Language Models](#d-018) | 2026 | arXiv preprint | 单神经元安全绕过 |
+| D-019 | [Compute Optimal Tokenization](#d-019) | 2026 | arXiv preprint | 字节级 scaling |
+| D-020 | [The Truth Lies Somewhere in the Middle (of the Generated Tokens)](#d-020) | 2026 | arXiv preprint | 生成 token 表示 |
+| D-021 | [Reasoning Emerges from Constrained Inference Manifolds in Large Language Models](#d-021) | 2026 | arXiv preprint | 推理流形健康度 |
+| D-022 | [When Looking Is Not Enough: Visual Attention Structure Reveals Hallucination in MLLMs](#d-022) | 2026 | arXiv preprint | 视觉注意力幻觉 |
+| D-023 | [Mechanistic Data Attribution: Tracing the Training Origins of Interpretable LLM Units](#d-023) | 2026 | arXiv preprint | 训练数据到电路 |
+
+### I. 干预和转移 / Intervention & Transfer
+
+| ID | Paper | Year | Venue | Notes |
+|---|---|---:|---|---|
+| I-001 | [MILR: Improving Multimodal Image Generation via Test-Time Latent Reasoning](#i-001) | 2025 | arXiv preprint | 测试时 latent reasoning |
+| I-002 | [Imitating the Truth: Attention-aware Truth-Guided Enhancement for Hallucination Mitigation in Large Vision-Language Models](#i-002) | 2026 | ICLR 2026 | 真实注意力模仿 |
+| I-003 | [When Safety Collides: Resolving Multi-Category Harmful Conflicts in Text-to-Image Diffusion via Adaptive Safety Guidance](#i-003) | 2026 | arXiv preprint | 自适应安全引导 |
+| I-004 | [Towards Identification and Intervention of Safety-Critical Parameters in Large Language Models](#i-004) | 2026 | arXiv preprint | 安全关键参数 |
+| I-005 | [Parameter Importance is Not Static](#i-005) | 2026 | arXiv preprint | 动态参数重要性 |
+| I-006 | [Next Concept Prediction in Discrete Latent Space Leads to Stronger Language Models](#i-006) | 2026 | arXiv preprint | 下一个概念预测 |
+| I-007 | [DINOv3 Beats Specialized Detectors: A Simple Foundation Model Baseline for Image Forensics](#i-007) | 2026 | arXiv preprint | DINOv3 图像鉴伪 |
+| I-008 | [Vision Banana](#i-008) | 2026 | arXiv preprint | 生成式视觉理解 |
+| I-009 | [ACE-Merging: Data-Free Model Merging with Adaptive Covariance Estimation](#i-009) | 2026 | arXiv preprint | 无数据模型合并 |
+| I-010 | [CAN HETEROGENEOUS LANGUAGE MODELS BE FUSED?](#i-010) | 2026 | arXiv preprint | 异构模型融合 |
+| I-011 | [Adopting a Human Developmental Visual Diet Yields Robust and Shape-Based AI Vision](#i-011) | 2026 | Nature Machine Intelligence | 发育式视觉训练 |
+| I-012 | [DGS-Net: Distillation-Guided Gradient Surgery for CLIP Fine-Tuning in AI-Generated Image Detection](#i-012) | 2025 | arXiv preprint | CLIP 梯度手术 |
+| I-013 | [PsychAdapter: Adapting LLMs to Reflect Traits, Personality, and Mental Health](#i-013) | 2026 | npj Artificial Intelligence | 人格特质适配器 |
+| I-014 | [Multilingual Safety Alignment via Self-Distillation](#i-014) | 2026 | arXiv preprint | 多语言安全迁移 |
+| I-015 | [Manifold Steering Reveals the Shared Geometry of Neural Network Representation and Behavior](#i-015) | 2026 | arXiv preprint | 流形 steering |
+| I-016 | [Don’t Retrain—Align](#i-016) | 2026 | arXiv preprint | AR 到扩散对齐 |
+| I-017 | [Correct When Paired, Wrong When Split](#i-017) | TBD | GitHub PDF | 跨模态知识编辑 |
+| I-018 | [Towards the Explainability of Protein Language Models](#i-018) | 2025 | arXiv preprint | 蛋白 LM 可解释性 |
+| I-019 | [Turning Drift into Constraint: Robust Reasoning Alignment in Non-Stationary Multi-Stream Environments](#i-019) | 2025 | arXiv preprint | 共识推理对齐 |
+| I-020 | [Orthogonal Model Merging](#i-020) | 2026 | arXiv preprint | 正交模型合并 |
+| I-021 | [EVA: Editing for Versatile Alignment against Jailbreaks](#i-021) | TBD | TBD | Jailbreak 防御编辑 |
+| I-022 | [ASGUARD: Activation-Scaling Guard to Mitigate Targeted Jailbreaking Attack](#i-022) | 2025 | arXiv preprint | 激活缩放防御 |
+| I-023 | [Evaluating and Steering Modality Preferences in Multi-modal LLMs](#i-023) | 2025 | arXiv preprint | 模态偏好 steering |
+| I-024 | [Toward Stable Value Alignment: Introducing Independent Modules for Consistent Value Guidance](#i-024) | 2026 | arXiv preprint | 独立价值模块 |
+| I-025 | [A Study on Hidden Layer Distillation for Large Language Model Pre-Training](#i-025) | 2026 | arXiv preprint | 隐藏层蒸馏 |
+| I-026 | [Model Spec Midtraining: Improving How Alignment Training Generalizes](#i-026) | 2026 | arXiv preprint | Model Spec 中训练 |
+
+### E. 评估与校准 / Evaluation & Calibration
+
+| ID | Paper | Year | Venue | Notes |
+|---|---|---:|---|---|
+| E-001 | [Self-Distilled Reasoner: On-Policy Self-Distillation for Large Language Models](#e-001) | 2026 | arXiv preprint | 自蒸馏推理 |
+| E-002 | [Language Models (Mostly) Know What They Know](#e-002) | 2022 | arXiv preprint | 自我知识校准 |
+| E-003 | [Domain-Filtered Knowledge Graphs from Sparse Autoencoder Features](#e-003) | 2026 | arXiv preprint | SAE 知识图谱 |
+| E-004 | [LLM DNA: Tracing Model Evolution via Functional Representations](#e-004) | 2026 | ICLR 2026 Oral | 模型功能 DNA |
+| E-005 | [Locate, Steer, and Improve: A Practical Survey of Actionable Mechanistic Interpretability in LLMs](#e-005) | 2026 | arXiv preprint | 可行动 MI 综述 |
+| E-006 | [From Parameter Dynamics to Risk Scoring](#e-006) | 2026 | arXiv preprint | 微调风险评分 |
+| E-007 | [Learning Uncertainty from Sequential Internal Dispersion in Large Language Models](#e-007) | 2026 | arXiv preprint | 隐藏状态不确定性 |
+| E-008 | [Black-Box Detection of LLM-Generated Text Using Generalized Jensen Shannon Divergence](#e-008) | 2025 | arXiv preprint | Surprisal 转移检测 |
+| E-009 | [Depression and Anxiety Characterization and Detection with Multimodal Deep Learning](#e-009) | 2026 | Nature Mental Health | 多模态心理健康综述 |
+| E-010 | [Restoring Exploration after Post-Training: Latent Exploration Decoding for Large Reasoning Models](#e-010) | 2026 | arXiv preprint | latent 探索解码 |
+| E-011 | [Information Flow Reveals When to Trust Language Models](#e-011) | TBD | OpenReview | 信息流可信度 |
+| E-012 | [Tracing Uncertainty in Language Model “Reasoning”](#e-012) | 2026 | arXiv preprint | 推理不确定性轨迹 |
+| E-013 | [Towards Generation-Efficient Uncertainty Estimation in Large Language Models](#e-013) | 2026 | arXiv preprint | 早期不确定性估计 |
+| E-014 | [Evaluating the Statistical Realism of LLM-generated Social Science Data](#e-014) | 2026 | PNAS | 社会数据统计真实性 |
+| E-015 | [Into the Gray Zone: Domain Contexts Can Blur LLM Safety Boundaries](#e-015) | 2026 | arXiv preprint | 安全灰区上下文 |
+| E-016 | [Towards Intrinsic Interpretability of Large Language Models: A Survey of Design Principles and Architectures](#e-016) | 2026 | arXiv preprint | 内生可解释性综述 |
+| E-017 | [Assessing the Creativity of Large Language Models: Testing, Limits, and New Frontiers](#e-017) | 2026 | arXiv preprint | 创造力评估有效性 |
+
+## D. 发现与探测：探讨模型内部 LK 的形成规律、空间分布以及表里状态差异
+
+<a id="d-001"></a>
+
+### D-001. [How Do Transformers Learn to Associate Tokens](https://openreview.net/pdf?id=A4Us8jxVGq)
 
 **发现问题：**
  Transformer 能学到词之间的语义关联，比如 “bird” 和 “flew”、“fish” 和 “pond”，但我们并不清楚这些关联是如何在训练过程中形成的。已有理论分析往往依赖合成数据、简化结构或非标准训练方式，和真实 LLM 训练差距较大。
@@ -12,8 +100,9 @@
  用于解释 Transformer 如何从自然语言数据中学习 token 之间的语义关联。作者通过梯度 leading\-term 分析，推导 output matrix、value matrix、query\-key matrix 和 positional encoding 的闭式近似表达。实验在 TinyStories 上训练 3\-layer attention\-only Transformer，并在 Pythia\-1\.4B 与 OpenWebText / FineWeb 上验证。结果表明，理论刻画的权重结构与真实模型学习到的权重高度一致，并能解释不同层和 attention heads 如何逐步形成语义关联。
 
 
+<a id="d-002"></a>
 
-### [What Do Language Models Learn and When? The Implicit Curriculum Hypothesis](https://arxiv.org/pdf/2604.08510)
+### D-002. [What Do Language Models Learn and When? The Implicit Curriculum Hypothesis](https://arxiv.org/pdf/2604.08510)
 
 **发现问题：**
  现有 scaling law 主要告诉我们模型整体 loss 会如何下降，但不能解释模型在预训练过程中**具体什么时候学会了哪些能力**。例如 GSM8k 性能变差时，很难判断问题出在数学能力、语言理解，还是多步推理能力上。
@@ -25,8 +114,9 @@
  用于 **分析语言模型预训练过程中的能力涌现顺序与训练动态**。作者设计了 91 个简单任务和组合任务，包括复制、大小写转换、形态变化、翻译、事实抽取、指代消解、逻辑推理和数学任务，并在 Pythia、OLMo、LLM360 等多个模型家族的中间 checkpoint 上跟踪这些能力什么时候出现。
 
 
+<a id="d-003"></a>
 
-### [Transformer layers as painters](https://ojs.aaai.org/index.php/AAAI/article/view/34708)
+### D-003. [Transformer layers as painters](https://ojs.aaai.org/index.php/AAAI/article/view/34708)
 
 **发现问题：**
  Transformer 的每一层结构相同，但我们并不清楚每一层到底是否都不可替代、层顺序是否严格重要。作者发现：底层和最后几层比较特殊，但大量中间层表现出明显相似性，说明中间层可能共享某种表示空间。
@@ -38,8 +128,9 @@
  用于 **分析 Transformer 层的功能、鲁棒性和推理加速潜力**。作者在冻结模型上测试不同执行策略，包括跳层、重复中间层、反转层顺序、随机层顺序、并行层和循环并行层。实验覆盖 Llama2、BERT\-Large，并补充 Mistral\-7B、Pythia\-6\.9B，评测任务包括 LAMBADA、ARC、GSM8K、HellaSwag、WinoGrande 和 GLUE。
 
 
+<a id="d-004"></a>
 
-### [LLM Safety From Within](https://arxiv.org/pdf/2604.18519)
+### D-004. [LLM Safety From Within](https://arxiv.org/pdf/2604.18519)
 
 **发现问题：**
  现有 LLM 安全检测模型通常只看最后一层表示，或者通过生成 “safe/unsafe” 来做分类。但作者发现，安全相关信息并不只存在于最后一层，而是分布在模型的多个中间层中。只依赖最后一层会浪费大量内部安全信号，也会带来更高的推理开销。
@@ -53,8 +144,9 @@
 
 
 
+<a id="d-005"></a>
 
-### [LLMs Encode Harmfulness and Refusal Separately](https://arxiv.org/pdf/2507.11878)
+### D-005. [LLMs Encode Harmfulness and Refusal Separately](https://arxiv.org/pdf/2507.11878)
 
 **发现问题：**
  现有研究通常把 LLM 的“拒绝行为”和“有害性判断”混在一起理解，认为模型拒绝了就说明它判断输入有害。但作者发现：模型有时会**知道输入是有害的，却仍然被 jailbreak 诱导接受**；也有时**知道输入是无害的，却仍然过度拒绝**。这说明拒绝行为不一定等于模型真正的有害性理解。
@@ -82,8 +174,9 @@
 
 
 
+<a id="d-006"></a>
 
-### [What do your logits know?](https://arxiv.org/pdf/2604.09885)
+### D-006. [What do your logits know?](https://arxiv.org/pdf/2604.09885)
 
 **发现问题：**
  用户通常只能看到模型最终回答，或者最多看到 top\-k logits，但作者发现：这些 logits 里可能隐藏了很多不该泄露的信息。即使模型只回答 “Yes/No”，它的 logits 仍可能暴露图像中的额外属性，比如目标物体的颜色、大小、材质，甚至背景物体的信息。
@@ -98,8 +191,9 @@
 
 
 
+<a id="d-007"></a>
 
-### [Convergent Evolution: How Different Language Models Learn Similar Number Representations](https://arxiv.org/pdf/2604.20817)
+### D-007. [Convergent Evolution: How Different Language Models Learn Similar Number Representations](https://arxiv.org/pdf/2604.20817)
 
 **发现问题：**
  很多语言模型都会学到数字 token 的周期性表示，比如在 Fourier 频域中出现 **T=2、5、10** 的周期峰值。但作者发现：有 Fourier spike 不代表模型真的学会了可用的数字结构。比如 LSTM 和原始 token 频率分布也有明显周期峰值，但无法用线性 probe 解码 `n mod T`。
@@ -111,8 +205,9 @@
  用于分析不同模型如何学习数字表示，以及哪些因素决定数字表示是否真正可用。作者比较 Transformer、Mamba、Gated DeltaNet、LSTM、GloVe、FastText 和原始 token 分布，并通过 Fourier spectrum 与 mod\-T linear probing 区分 spectral / geometric convergence。实验还控制数据、架构、优化器和 tokenizer，发现自然语言中的数字\-文本共现、数字间交互、上下文长度，以及多 token 加法任务都会影响几何可分的数字表示形成。
 
 
+<a id="d-008"></a>
 
-### [Task\-Driven Subspace Decomposition for Knowledge Sharing and Isolation in LoRA\-based Continual Learning](https://arxiv.org/pdf/2603.00191)
+### D-008. [Task-Driven Subspace Decomposition for Knowledge Sharing and Isolation in LoRA-based Continual Learning](https://arxiv.org/pdf/2603.00191)
 
 **发现问题：**
  LoRA\-based continual learning 通常通过“隔离新任务更新空间”来避免遗忘，比如把新任务放到旧任务的 null space 中。但作者发现：这种做法过度强调隔离，忽略了任务之间可共享的知识；而且旧任务的 null space 不一定对新任务有效，可能只是“安全但没用”的空间，导致新任务也学不好。
@@ -123,9 +218,10 @@
 **任务：**
  用于解决 LoRA 连续学习中的灾难性遗忘和稳定性\-可塑性冲突。作者提出 **LoDA**，先根据 projection energy 分解出 general / isolated 两个 LoRA 子空间，固定 down\-projection，只训练 up\-projection；再用 **Gradient\-Aligned Optimization（GAO）** 提升梯度一致性；训练后对 general branch 做 closed\-form recalibration，再合并 LoRA 到 backbone。实验覆盖 ImageNetR、ImageNetA、CIFAR100、CUB、DomainNet，并在 ViT、CLIP、DINO、iBOT 等 backbone 上验证，结果优于现有 PEFT\-based continual learning 方法。
 
-### 
 
-### [Last\-Layer\-Centric Feature Recombination](https://arxiv.org/pdf/2604.26454)
+<a id="d-009"></a>
+
+### D-009. [Last-Layer-Centric Feature Recombination](https://arxiv.org/pdf/2604.26454)
 
 **发现问题：**
  现有基于 DINO / ViT 的单目深度估计通常会均匀选取几个中间层做多尺度特征，默认 3D 几何信息在各层中均匀分布。但作者发现并不是这样：DINOv3 的 3D 几何知识主要集中在更深层，尤其最后几层的深度可预测性更强，也更能反映样本之间的几何差异。
@@ -137,8 +233,9 @@
  用于提升 DINOv3 在单目深度估计中的 3D 几何迁移能力。作者提出 **Last\-Layer\-Centric Feature Recombination（LFR）**，插入在 DINOv3 backbone 和 DPT decoder 之间：先用 minimal\-similarity 策略选择互补中间层，再通过轻量 linear adapter 与最后一层特征融合，最后进行多层加权深度预测。实验覆盖 NYU\-Depth v2、KITTI，并在 SUN RGB\-D 和 Argoverse 上做 zero\-shot 测试。结果显示，LFR 能稳定提升 DINOv3 的深度估计精度和跨数据集泛化能力。
 
 
+<a id="d-010"></a>
 
-### [Beyond Outliers: A Data\-Free Layer\-wise Mixed\-Precision Quantization Approach Driven by Numerical and Structural Dual\-Sensitivity](https://arxiv.org/pdf/2603.17354)
+### D-010. [Beyond Outliers: A Data-Free Layer-wise Mixed-Precision Quantization Approach Driven by Numerical and Structural Dual-Sensitivity](https://arxiv.org/pdf/2603.17354)
 
 **发现问题：**
  现有层级混合精度量化方法通常只看权重 outlier、误差或熵等单一数值指标，并且把同一层里的所有模块一视同仁。但作者发现：有些层虽然数值 outlier 不明显，量化后仍会严重掉点，因为它们的结构表达能力很关键。也就是说，层敏感性不只来自“数值异常”，还来自“结构功能”。
@@ -150,8 +247,9 @@
  用于在无校准数据的情况下做 LLM 层级混合精度量化。作者提出 **NSDS**，先用机制视角分解每层的 Detector / Writer，再用 excess kurtosis 衡量数值脆弱性，用 SVD 谱能量、谱熵和角色感知重加权衡量结构表达性，最后通过 **MAD\-Sigmoid \+ Soft\-OR** 聚合成层敏感性分数，并将高敏感层分配 4\-bit、低敏感层分配 2\-bit。实验覆盖 Llama\-3\.1\-8B、Qwen2\.5\-7B、Llama\-2\-13B、Qwen2\.5\-14B，任务包括 ARC\-C、HellaSwag、PIQA、BoolQ、WinoGrande、TruthfulQA、WikiText\-2 和 C4。结果显示，NSDS 在不同 bit budget、不同模型规模和不同 PTQ 后端上都优于或接近现有方法。
 
 
+<a id="d-011"></a>
 
-### [Large Language Models are Universal Reasoners for Visual Generation](https://arxiv.org/pdf/2605.04040)
+### D-011. [Large Language Models are Universal Reasoners for Visual Generation](https://arxiv.org/pdf/2605.04040)
 
 **发现问题：**
  现有文生图模型即使使用同一个 LLM 同时做理解和生成，也经常出现“理解强、生成弱”的问题：模型生成时会弄错数量、位置关系、物理常识等，但让它检查自己生成的图时，却能准确发现这些错误。作者把这个现象称为 **understanding\-generation gap**。
@@ -163,8 +261,9 @@
  用于提升文生图模型对复杂 prompt 的语义一致性和组合约束满足能力。作者提出 **UniReasoner**，采用 **Draft–Evaluate–Diffuse** 三阶段流程：先用 LLM 生成离散视觉 token 草图，再让同一个 LLM 对草图进行自我评估，指出缺失物体、错误数量、错误属性或空间关系，最后用冻结的 SANA diffusion backbone 在三重条件下生成最终图像。实验在 GenEval 和 DPG\-Bench 上验证，UniReasoner 在相同 diffusion generator 下将 GenEval 从 **0\.79 提升到 0\.88**，DPG\-Bench 从 **84\.50 提升到 86\.30**，尤其提升 Counting、Position 和 Attribute Binding。
 
 
+<a id="d-012"></a>
 
-### [The Cylindrical Representation Hypothesis for Language Model Steering](https://arxiv.org/pdf/2605.01844)
+### D-012. [The Cylindrical Representation Hypothesis for Language Model Steering](https://arxiv.org/pdf/2605.01844)
 
 **发现问题：**
  现有 activation steering 通常基于 **Linear Representation Hypothesis**，认为概念可以用一个全局线性方向控制。但作者发现：真实模型中概念方向并不完全正交，不同概念会相互重叠，所以同一个 steering vector 在不同样本上效果很不稳定。有些样本能成功激活目标概念，有些样本却失败或输出崩坏。
@@ -176,8 +275,9 @@
  用于解释和预测 LLM activation steering 为什么在不同样本上表现不稳定。作者提出 **Cylindrical Representation Hypothesis（CRH）**，将 steering vector 分解为 axis component、normal\-plane component 和 residual component，并分析不同部分对概念激活和输出崩坏的影响。实验覆盖 Gemma\-2B\-IT、LLaMA2\-7B\-Chat，测试 100 个 text/code/math 概念，并比较 DiffMean、PCA、Mean\-Centering、Probe\-based steering 等方法。结果显示，normal\-plane component 越强，目标概念越早出现，但输出也越容易崩坏；同时，sensitive sector 无法仅由相似的 difference vector 稳定预测，解释了 steering 的样本级不可预测性。
 
 
+<a id="d-013"></a>
 
-### [Disentangling Mathematical Reasoning in LLMs](https://arxiv.org/pdf/2604.15842v1)
+### D-013. [Disentangling Mathematical Reasoning in LLMs](https://arxiv.org/pdf/2604.15842v1)
 
 **发现问题：**
  LLM 能做一些简单算术，但我们并不清楚它到底是在“背答案”、做模式匹配，还是在内部真的执行某种计算过程。作者发现：模型很早就能识别这是一个数学任务，但正确答案并不是早期就出现，而是在最后几层才被生成出来。
@@ -189,8 +289,9 @@
  用于分析 LLM 做数学推理时的内部机制。作者使用 **early decoding / logit lens**，在每一层 attention 和 MLP 后把 residual stream 解码成中间预测，观察模型什么时候识别任务、什么时候传播操作数和运算符、什么时候生成正确结果。实验比较 GPT\-NeoX\-20B 和 GPT\-2 XL，在加法、减法、两操作数和三操作数任务上验证。结果显示，GPT\-NeoX\-20B 中 attention 会在中间层传播 operand/operator，MLP 在后期逐步形成答案；而 GPT\-2 XL 缺少这种 attention\-MLP 分工，因此算术能力很差。
 
 
+<a id="d-014"></a>
 
-### [Learning a Generative Meta\-Model of LLM Activations](https://arxiv.org/pdf/2602.06964)
+### D-014. [Learning a Generative Meta-Model of LLM Activations](https://arxiv.org/pdf/2602.06964)
 
 **发现问题：**
  现有激活分析方法，比如 PCA、SAE、线性 steering，通常假设模型内部表示具有线性或稀疏结构。但作者发现：这些假设可能太强，干预时容易把 activation 推到模型真实分布之外，导致输出不流畅或崩坏。因此，仅靠线性方向或稀疏特征，可能无法准确刻画 LLM activation manifold。
@@ -202,8 +303,9 @@
  用于学习 LLM activation 的生成式表示模型，并辅助解释和干预。作者提出 **Generative Latent Prior（GLP）**，在 10 亿个 residual stream activations 上训练 diffusion meta\-model，覆盖 Llama1B 和 Llama8B。GLP 可用于两类任务：一是 **on\-manifold steering**，提升 sentiment steering、SAE feature steering、persona elicitation 的概念控制与流畅性平衡；二是作为 feature encoder，用 **meta\-neurons** 做 1\-D probing，在 113 个二分类概念任务上优于 SAE、raw layer output 和 raw MLP neurons。实验还显示，GLP 的 diffusion loss 随 compute 平滑下降，并能预测 steering 和 probing 的下游效果。
 
 
+<a id="d-015"></a>
 
-### [Vision Transformers Need More Than Registers](https://arxiv.org/pdf/2602.22394)
+### D-015. [Vision Transformers Need More Than Registers](https://arxiv.org/pdf/2602.22394)
 
 **发现问题：**
  ViT 在 dense vision 任务中经常出现奇怪 artifacts，比如背景区域反而和 CLS token 更相似，导致定位、分割、开放词汇检测表现差。已有方法认为问题来自 high\-norm tokens，并用 register tokens 缓解；但作者发现：register 只能消除 high\-norm 现象，不能解决根本问题。真正原因是 ViT 学会了用背景 patch 作为捷径来表达全局语义。
@@ -215,8 +317,9 @@
  用于分析并缓解 ViT 中的 dense\-feature artifacts。作者提出 **Patch Score** 衡量 patch 与 CLS token 的相似度，并用 **Point\-in\-Box（PiB）** 判断最高分 patch 是否落在前景框内；分析发现 ViT 的高分 patch 更常落在背景，且这种偏差从训练早期就出现。为解决该问题，作者提出 **LaSt\-ViT / LazyStrike**：用频域 low\-pass filtering 计算每个 patch 的稳定性，再按 channel\-wise Top\-K 选择稳定 patch 聚合到 CLS token，减少背景 shortcut。实验覆盖 label\-supervised、text\-supervised 和 self\-supervised ViT，在 ImageNet、VOC、COCO、ADE20K、Cityscapes、LVIS 等 12 个 benchmark 上验证，提升 object discovery、semantic segmentation、open\-vocabulary detection 和 instance segmentation。
 
 
+<a id="d-016"></a>
 
-### [What Happens Inside Agent Memory? Circuit Analysis from Emergence to Diagnosis](https://arxiv.org/pdf/2605.03354)
+### D-016. [What Happens Inside Agent Memory? Circuit Analysis from Emergence to Diagnosis](https://arxiv.org/pdf/2605.03354)
 
 **发现问题：**
  Agent memory 的失败很隐蔽：模型可能回答得很流畅，但其实在某一步已经失败了，比如没有正确写入事实、错误更新记忆，或者读取时没有用上正确记忆。现有评估通常只看最终 QA 准确率，无法判断到底是 **Write、Manage、Read** 哪个阶段出错。作者发现：不同记忆阶段在模型内部有可分离的 circuit signature，因此可以从内部机制定位 silent failure。
@@ -230,8 +333,9 @@
  用于分析 LLM agent memory 的内部机制，并诊断记忆系统中 silent failure 的来源。作者在 Qwen\-3 系列 **0\.6B / 4B / 8B / 14B** 上，用 pre\-trained transcoders 和 feature circuit tracing 分析 **mem0** 与 **A\-MEM** 两种记忆框架的 Write、Manage、Read 三个阶段。实验发现：Manage circuit 在 0\.6B 已有因果信号，而 Write / Read 到 4B 才出现；Write 和 Read 共享 late\-layer hub，并且该结构跨 mem0 和 A\-MEM 都存在。基于这些 circuit signature，作者提出一个无监督 stage\-level diagnostic，可以把错误定位到具体阶段，准确率达到 **76\.2%**，比最强监督 baseline 高约 **13 个点**。总体上，这篇文章把 agent memory 从“外部流程分析”推进到“内部电路诊断”。
 
 
+<a id="d-017"></a>
 
-### [Rethinking RL for LLM Reasoning: It’s Sparse Policy Selection, Not Capability Learning](https://arxiv.org/pdf/2605.06241)
+### D-017. [Rethinking RL for LLM Reasoning: It’s Sparse Policy Selection, Not Capability Learning](https://arxiv.org/pdf/2605.06241)
 
 **发现问题：**
  大家通常认为 RL 能让 LLM 学到新的推理能力，但作者发现：RL 可能并没有真正教会模型新的 reasoning strategy，而只是把 base model 本来就会的正确路径概率提高了。也就是说，base model 的采样空间里已经有正确解，RL 主要是在关键分叉点帮模型“选对路”。
@@ -244,8 +348,9 @@
 
 
 
+<a id="d-018"></a>
 
-### [A Single Neuron Is Sufficient to Bypass Safety Alignment in Large Language Models](https://arxiv.org/pdf/2605.08513)
+### D-018. [A Single Neuron Is Sufficient to Bypass Safety Alignment in Large Language Models](https://arxiv.org/pdf/2605.08513)
 
 **发现问题：**
  大家通常认为 LLM 的安全对齐是分散在整个模型里的，所以应该比较鲁棒，不会被单个局部组件轻易破坏。但这篇文章发现并不是这样：安全拒答可能存在非常细粒度的“瓶颈”，只要干预一个 MLP neuron，就可能显著改变模型是否拒绝有害请求。
@@ -260,8 +365,9 @@
  用于分析 LLM 安全对齐是否真的鲁棒，以及安全行为是否能被定位到单个神经元。作者在 Qwen3 和 Llama\-3\.1 共 7 个模型上，用 harmful / harmless prompts 的 activation 和 gradient 信号定位 **refusal neuron**，再通过单神经元干预验证其因果作用；同时还用 **suicide neuron** 做概念层面的验证。实验覆盖 Qwen3\-1\.7B / 4B / 8B / 14B / 32B，以及 Llama\-3\.1\-8B / 70B；评测包括 HarmBench、JailbreakBench、XSTest、MMLU 和 GSM8K。结果显示：抑制单个 refusal neuron 就能高成功率绕过安全拒答，而放大单个 concept neuron 也能让无害 prompt 生成自杀相关内容；此外，这些 refusal neurons 在 base model 中已经存在，说明 alignment 更像是在调节已有安全相关神经元，而不是从零创造安全机制。
 
 
+<a id="d-019"></a>
 
-### [Compute Optimal Tokenization](https://arxiv.org/pdf/2605.01188v1)
+### D-019. [Compute Optimal Tokenization](https://arxiv.org/pdf/2605.01188v1)
 
 **发现问题：**
  现有 scaling law 通常用 “tokens per parameter” 来决定模型大小和训练数据量，比如 Chinchilla 的约 20 tokens / parameter。但作者指出：token 不是稳定单位，因为不同 tokenizer 的压缩率不同，同样一段文本可能被切成更多或更少 token。也就是说，如果只看 token 数，会把 tokenizer 的影响混进 scaling law 里。作者发现：真正更稳定的单位不是 token，而是 **byte**。在 compute\-optimal 设置下，训练数据的 **bytes** 和模型参数量之间保持近似固定比例，而不是 tokens 和参数量。
@@ -275,8 +381,9 @@
  用于研究不同 tokenization 压缩率如何影响 LLM scaling law，并指导 tokenizer / vocabulary / latent tokenization 的选择。作者训练了 **988 个 latent\-tokenized BLT 模型** 和 **320 个 subword\-tokenized 模型**，模型规模从 50M 到 6\.7B，训练预算从 5e18 到 2e21 FLOPs；通过控制 compression rate，即平均每个 token 表示多少 bytes，分析 compute\-optimal 的数据量、模型大小和 loss。实验覆盖 BLT latent tokenization、character tokenization、BPE、masked BPE、SuperBPE，并扩展到 English、French、Vietnamese、Arabic、Russian、Hindi 等语言。结果显示：英文下 compute\-optimal 训练大约对应 **60 bytes / parameter**；最优压缩率不是固定 BPE 的 4\.57 bytes/token，而是随 compute 增大略微下降；不同语言的最优压缩率不同，并与语言的 byte parity / 信息密度相关。总体上，这篇文章把 scaling law 从 “token 数量” 推进到 “信息字节量 \+ token 压缩率” 的视角。
 
 
+<a id="d-020"></a>
 
-### [The Truth Lies Somewhere in the Middle \(of the Generated Tokens\)](https://arxiv.org/pdf/2605.09969)
+### D-020. [The Truth Lies Somewhere in the Middle (of the Generated Tokens)](https://arxiv.org/pdf/2605.09969)
 
 **发现问题：**
  在 autoregressive LLM 里，大家通常会用某一个 token 的 hidden state，比如最后一个 token，来当作整段文本的表示。但作者发现：生成过程中的语义信息并不集中在某一个 token 上，而是分散在多个 generated tokens 里。也就是说，单独看最后一个 token 或某个中间 token，都不能最好地代表模型内部对输入语义的理解。
@@ -290,8 +397,9 @@
  用于研究 autoregressive LLM 的 generated\-token hidden states 应该如何聚合成语义表示，并分析生成过程中的内部状态变化。作者比较 **last\-token pooling** 和 **mean\-token pooling**，用 kernel alignment / CKA 衡量 LLM 表示和参考空间之间的一致性。实验覆盖 vision\-language、reasoning 和 protein 三类任务：视觉任务用 WIT、DCI，并和 DINOv2 图像表示对齐；推理任务用 MATH\-500、GPQA\-Diamond，并和 gold solution 表示对齐；蛋白任务用 UniProt，并和 ESM\-3 蛋白结构表示对齐。结果显示，**generated tokens 的 mean pooling 表示优于任何单个 token**，也优于 prompt\-token 表示；不同生成片段、不同 decoding seeds、不同图像区域描述的表示混合后，alignment 进一步提升。作者还发现，生成中的 “Let me recall what I know” 这类 recall phrase 会引起表示空间的明显跃迁，说明 generated tokens 不只是输出文本，也在推动模型内部状态转移。总体上，这篇文章说明：autoregressive generation 本身可以产生更好的语义 embedding，而语义信息是沿生成轨迹分布式存在的。
 
 
+<a id="d-021"></a>
 
-### [Reasoning Emerges from Constrained Inference Manifolds in Large Language Models](https://arxiv.org/pdf/2605.08142)
+### D-021. [Reasoning Emerges from Constrained Inference Manifolds in Large Language Models](https://arxiv.org/pdf/2605.08142)
 
 **发现问题：**
  现在大家通常用 benchmark accuracy 判断 LLM 是否会 reasoning，但这种评估会把任务数据、prompt 技巧、答案格式和模型内部推理质量混在一起。作者发现：如果不看最终答案，而是直接看模型推理时 hidden states 的动态变化，会发现 LLM 的 reasoning 并不是在高维空间里随意游走，而是会自发压缩到一个低维 manifold 上。
@@ -310,8 +418,9 @@
  实验覆盖 Qwen2\.5、Qwen3、Gemma3、DeepSeek\-R1\-Distill\-Qwen 等多个模型族和规模，并用 MMLU\-Other 的通用认知刺激提取内部动态。结果显示，推理轨迹普遍会随层数加深快速降维，但单看低维度不能预测能力；高性能模型通常同时具有低 Dstim、高 V 和足够 Dworld。这个无标签指标 H 和 AIME、Arena\-Hard、AutoLogi、BFCL、GPQA、LiveBench、LiveCodeBench 等下游 benchmark 表现有很高 Spearman 相关性。总体上，这篇文章把 reasoning 评估从“看答案对不对”推进到“看内部推理轨迹是否处在几何和信息约束允许的健康区域”。
 
 
+<a id="d-022"></a>
 
-### [When Looking Is Not Enough: Visual Attention Structure Reveals Hallucination in MLLMs](https://arxiv.org/pdf/2605.11559)
+### D-022. [When Looking Is Not Enough: Visual Attention Structure Reveals Hallucination in MLLMs](https://arxiv.org/pdf/2605.11559)
 
 **发现问题：**
  很多多模态大模型会产生 **visual hallucination**，比如图里没有某个物体却说有，或者对图像关系判断错误。常见解释是：模型幻觉是因为“不看图”或 visual attention 不够。但作者发现并不是这么简单：模型即使对 image tokens 分配了很高 attention，也可能仍然输出错误答案。也就是说，幻觉不一定是“看得少”，而可能是“看了，但视觉注意力结构已经错了”。
@@ -331,8 +440,9 @@
 实验覆盖 LLaVA\-1\.5、InstructBLIP、Qwen\-VL\-Chat、GLM\-4V\-9B、Video\-LLaVA 和 LLaVA\-Next\-Video，并在 POPE、CHAIR、HallusionBench、MME、MM\-Vet、LLaVA\-Bench 和 VideoHallucer 上评估。结果显示，LaSCD 能显著降低 hallucination，同时基本保持通用多模态能力。例如在 CHAIR 上，LaSCD 相比 vanilla LLaVA\-1\.5 明显降低 hallucination；在 POPE 上也提升了 average accuracy 和 F1；在 MME、MM\-Vet 等通用能力 benchmark 上没有像部分 decoding 方法那样明显牺牲性能。总体上，这篇文章把视觉幻觉分析从“模型有没有看图”推进到“模型的视觉注意力结构是否稳定、连贯、可信”。
 
 
+<a id="d-023"></a>
 
-### [Mechanistic Data Attribution: Tracing the Training Origins of Interpretable LLM Units](https://arxiv.org/pdf/2601.21996)
+### D-023. [Mechanistic Data Attribution: Tracing the Training Origins of Interpretable LLM Units](https://arxiv.org/pdf/2601.21996)
 
 **发现问题：**
  现有 mechanistic interpretability 通常能告诉我们模型里有什么机制，比如 induction head、knowledge neuron、SAE feature 等，但大多是 **静态分析**：我们知道某个 head 在做 copy / pattern completion，却不知道它到底是被哪些训练数据“养出来”的。作者指出：如果只知道 circuit 存在，却不知道它的训练来源，就很难从数据层面控制模型内部机制的形成。
@@ -361,10 +471,11 @@
 
 
 
+## I. 干预和转移：latent knowledge 能不能跨任务、跨模型、跨模态增强和迁移？
 
-## 干预和转移：latent knowledge 能不能跨任务、跨模型、跨模态增强和迁移？
+<a id="i-001"></a>
 
-### [MILR: Improving Multimodal Image Generation via Test\-Time Latent Reasoning （latent knowledge的探测增强思路也可以做生成）](https://arxiv.org/pdf/2509.22761)
+### I-001. [MILR: Improving Multimodal Image Generation via Test-Time Latent Reasoning （latent knowledge的探测增强思路也可以做生成）](https://arxiv.org/pdf/2509.22761)
 
 **发现问题：**
  现有 reasoning\-augmented image generation 方法通常有两个问题：
@@ -379,8 +490,9 @@
 实验在 **GenEval、T2I\-CompBench、WISE** 上进行。MILR 在 GenEval 上达到 **0\.95 overall score**，在 WISE 上达到 **0\.63**，比 Janus\-Pro\-7B baseline 的 **0\.35** 明显提升。
 
 
+<a id="i-002"></a>
 
-### [Imitating the Truth: Attention\-aware Truth\-Guided Enhancement for Hallucination Mitigation in Large Vision\-Language Models](https://openreview.net/pdf?id=fzZAh18s9G)
+### I-002. [Imitating the Truth: Attention-aware Truth-Guided Enhancement for Hallucination Mitigation in Large Vision-Language Models](https://openreview.net/pdf?id=fzZAh18s9G)
 
 **发现问题：**
  现有 LVLM 幻觉缓解方法通常只是粗粒度地增强视觉注意力或抑制文本先验，但作者发现：幻觉并不是简单因为“看图不够”，而是模型在不同层、不同阶段没有复现真实 token 的注意力模式。真实 token 和幻觉 token 在 image attention / text attention 上存在明显差异，而且这种差异是分阶段、分模型变化的。
@@ -393,8 +505,9 @@
  用于 **Large Vision\-Language Models 的 hallucination mitigation**，也就是减少图文模型生成与图像不一致的内容。实验任务包括 **COCO 图像描述、POPE 物体存在判断、MME 幻觉评测**，并在 LLaVA、MiniGPT\-4、mPLUG\-Owl2 等模型上验证。
 
 
+<a id="i-003"></a>
 
-### [When Safety Collides: Resolving Multi\-Category Harmful Conflicts in Text\-to\-Image Diffusion via Adaptive Safety Guidance](https://arxiv.org/pdf/2602.20880)
+### I-003. [When Safety Collides: Resolving Multi-Category Harmful Conflicts in Text-to-Image Diffusion via Adaptive Safety Guidance](https://arxiv.org/pdf/2602.20880)
 
 **发现问题：**
  现有文生图安全方法通常把多个有害类别的关键词直接合并，比如 hate、sexual、violence、illegal 等一起用来做 safety guidance。作者发现这种做法不一定更安全，反而会产生 **harmful conflict**：不同有害类别的安全引导方向可能不一致、互相抵消，导致真正需要抑制的有害内容没有被有效压制。
@@ -408,8 +521,9 @@
 
 
 
+<a id="i-004"></a>
 
-### [Towards Identification and Intervention of Safety\-Critical Parameters in Large Language Models](https://arxiv.org/pdf/2604.08297)
+### I-004. [Towards Identification and Intervention of Safety-Critical Parameters in Large Language Models](https://arxiv.org/pdf/2604.08297)
 
 **发现问题：**
  现有 LLM 安全对齐方法能提升安全性，但我们仍不清楚模型内部到底哪些参数真正负责安全行为。因此，在模型继续微调到下游任务时，安全能力很容易被破坏；而如果想快速增强一个未对齐模型的安全性，也缺少精准、低成本的干预方法。
@@ -429,8 +543,9 @@
 
 
 
+<a id="i-005"></a>
 
-### [Parameter Importance is Not Static](https://arxiv.org/pdf/2604.14010)
+### I-005. [Parameter Importance is Not Static](https://arxiv.org/pdf/2604.14010)
 
 **发现问题：**
  大模型在多任务 SFT 中容易出现任务干扰和灾难性遗忘。已有参数隔离方法会提前找出一批“重要参数”并固定冻结，但作者发现：参数重要性并不是静态的，而是会随着训练过程不断漂移。早期重要的参数后期可能不重要，后期新出现的关键参数又可能没有被保护，导致静态隔离失效。
@@ -442,8 +557,9 @@
  用于缓解大语言模型多任务 SFT 中的任务冲突、灾难性遗忘和稳定性\-可塑性矛盾。作者提出 EPI，在训练中用平方梯度 EMA 估计参数重要性，结合层内归一化和动态 top\-p% mask 更新。实验覆盖 LLaMA\-3\-8B、Mistral\-7B、Qwen2\-7B、Gemma\-2\-9B，任务包括 GSM8K、CodeAlpaca、LogiQA、Alpaca 和 UltraChat。结果表明，EPI 相比普通 SFT、多阶段 SFT 和静态隔离都有更好表现。
 
 
+<a id="i-006"></a>
 
-### [Next Concept Prediction in Discrete Latent Space Leads to Stronger Language Models](https://arxiv.org/pdf/2602.08984)
+### I-006. [Next Concept Prediction in Discrete Latent Space Leads to Stronger Language Models](https://arxiv.org/pdf/2602.08984)
 
 **发现问题：**
  现有语言模型主要依赖 **Next Token Prediction**，也就是逐 token 预测下一个词。但作者认为，随着模型变大，单纯预测低层 token 可能不够高效，难以充分利用模型容量，也不利于学习更抽象、更长程的语义信息。
@@ -457,8 +573,9 @@
 
 
 
+<a id="i-007"></a>
 
-### [DINOv3 Beats Specialized Detectors: A Simple Foundation Model Baseline for Image Forensics （鉴伪需要看下）](https://arxiv.org/pdf/2604.16083)
+### I-007. [DINOv3 Beats Specialized Detectors: A Simple Foundation Model Baseline for Image Forensics （鉴伪需要看下）](https://arxiv.org/pdf/2604.16083)
 
 **发现问题：**
  现有图像篡改检测 / 定位方法通常依赖复杂的专门结构，比如多尺度融合、频域线索、边界建模等，但这些方法在跨数据集、跨篡改类型、不同后处理条件下泛化不稳定。作者发现：这个领域不只是缺更复杂模型，而是缺一个**简单、现代、强泛化的 foundation model baseline**。
@@ -473,8 +590,9 @@
 
 
 
+<a id="i-008"></a>
 
-### [Vision Banana 能不能把他的能力分组分开探测出来再强化下](https://arxiv.org/pdf/2604.20329)
+### I-008. [Vision Banana 能不能把他的能力分组分开探测出来再强化下](https://arxiv.org/pdf/2604.20329)
 
 传统视觉理解任务通常依赖专门模型，比如分割用 SAM，深度估计用 Depth Anything，法线估计用 Lotus。但作者提出一个问题：**强大的图像生成模型是否已经在生成预训练中学到了通用视觉理解能力？** 也就是说，image generator 可能不只是会“画图”，它内部可能已经隐含了 segmentation、depth、normal 等视觉知识，只是缺少合适的输出接口。
 
@@ -503,8 +621,9 @@
 实验显示 Vision Banana 在多个 2D / 3D 视觉理解任务上达到或接近 SOTA，例如在 Cityscapes semantic segmentation 上超过 SAM 3，在 metric depth estimation 上超过 Depth Anything 3 的平均结果，同时在 GenAI\-Bench 和 ImgEdit 上基本保持 Nano Banana Pro 的生成能力。
 
 
+<a id="i-009"></a>
 
-### [ACE\-Merging: Data\-Free Model Merging with Adaptive Covariance Estimation](https://arxiv.org/pdf/2603.02945)
+### I-009. [ACE-Merging: Data-Free Model Merging with Adaptive Covariance Estimation](https://arxiv.org/pdf/2603.02945)
 
 **发现问题：**
  多个任务模型合并时，不同 expert 之间会互相干扰。尤其是在 **没有原始训练数据** 的 data\-free 场景下，现有方法大多只是直接在参数上做平均、剪枝或分解，缺少对任务差异的建模，所以合并后性能容易下降。
@@ -517,11 +636,11 @@
 
 
 
-### 
 
 
+<a id="i-010"></a>
 
-### [CAN HETEROGENEOUS LANGUAGE MODELS BE FUSED?](https://arxiv.org/pdf/2604.01674)
+### I-010. [CAN HETEROGENEOUS LANGUAGE MODELS BE FUSED?](https://arxiv.org/pdf/2604.01674)
 
 **发现问题：**
  现有模型融合大多假设多个 expert 来自同一个 backbone，比如都是 Llama 或都是 Qwen。但现实中有用的专家模型往往来自不同模型家族，例如 Llama、Qwen、Mistral。不同架构之间层数、hidden size、模块结构和表示空间都不一致，直接做参数合并会失效，并且多个异构 expert 还会带来更强的冲突和噪声。
@@ -533,8 +652,9 @@
  用于 **heterogeneous LLM fusion**：把来自不同模型家族的 expert adapters 融合到一个目标模型中，得到一个单一 fused adapter。实验主要包括 Llama、Qwen、Mistral 之间的跨架构融合，用在信息抽取任务，如 NER、RE、ET，也测试了 GLUE 上的跨任务泛化能力。
 
 
+<a id="i-011"></a>
 
-### [Adopting a Human Developmental Visual Diet Yields Robust and Shape\-Based AI Vision](https://www.nature.com/articles/s42256-026-01228-6)
+### I-011. [Adopting a Human Developmental Visual Diet Yields Robust and Shape-Based AI Vision](https://www.nature.com/articles/s42256-026-01228-6)
 
 **发现问题：**
  现有 AI 视觉模型和人类视觉仍有明显差距：人类更依赖形状，AI 更依赖纹理；人类对模糊、噪声、遮挡等退化更鲁棒，而 AI 容易受图像退化和对抗攻击影响。作者认为问题不只是模型规模不够，而是 AI 的“视觉成长经历”和人类不同：AI 从一开始就看高清图像，而人类早期视觉是模糊、低对比、弱色彩的。
@@ -546,8 +666,9 @@
  用于训练更接近人类视觉的鲁棒 AI 视觉模型。作者把人类视觉发育中的三条曲线——视觉敏锐度、对比敏感度、色彩敏感度——转化为图像预处理课程，并用于训练 ResNet、AlexNet、VGG、MobileNet、ViT、DeiT 等模型。实验覆盖 mini\-ecoset、ecoset 和 ImageNet\-1K，评测包括 shape\-texture bias、IllusionBench 抽象形状识别、图像退化鲁棒性和黑盒/白盒对抗攻击。结果显示，DVD 显著提升形状偏置、抽象形状识别和鲁棒性，其中对比敏感度发展是最关键因素。
 
 
+<a id="i-012"></a>
 
-### [DGS\-Net: Distillation\-Guided Gradient Surgery for CLIP Fine\-Tuning in AI\-Generated Image Detection](https://arxiv.org/pdf/2511.13108)
+### I-012. [DGS-Net: Distillation-Guided Gradient Surgery for CLIP Fine-Tuning in AI-Generated Image Detection](https://arxiv.org/pdf/2511.13108)
 
 **发现问题：**
  CLIP 本身有很强的通用视觉语义表示，适合做 AI 生成图像检测；但直接用 LoRA 等方式微调 CLIP，容易造成灾难性遗忘。结果是模型虽然更容易区分训练集上的 real/fake，但会破坏 CLIP 原本的表示几何结构，导致跨生成模型泛化变差。
@@ -559,8 +680,9 @@
  用于提升 CLIP 微调在 AI 生成图像检测中的跨域泛化能力。作者提出 **DGS\-Net**，包含两个模块：**Orthogonal Suppression** 用文本分支梯度识别并去除有害语义方向；**Prior Alignment** 用冻结 CLIP 图像分支的有益梯度对齐可迁移先验。实验覆盖 AIGCDetectBench、AIGIBench 和 UniversalFakeDetect，测试 50 种生成模型，包括 GAN、diffusion、Deepfake、DALLE、FLUX、Midjourney、SDXL 等。结果显示，DGS\-Net 在检测准确率、AP、JPEG/blur 鲁棒性和表示几何保持上都优于现有方法。
 
 
+<a id="i-013"></a>
 
-### [PsychAdapter: Adapting LLMs to Reflect Traits, Personality, and Mental Health](https://www.nature.com/articles/s44387-026-00071-9) \(子刊 npj AI\)
+### I-013. [PsychAdapter: Adapting LLMs to Reflect Traits, Personality, and Mental Health](https://www.nature.com/articles/s44387-026-00071-9) (子刊 npj AI)
 
 **发现问题：**
  现有 LLM 生成的文本通常像“平均人”的语言，缺少个体差异，难以稳定体现不同人格、心理健康状态或人口学特征。单纯靠 prompt 控制人格也比较粗糙，只能使用离散描述，难以精细控制连续心理特质，比如外向性高低、抑郁程度或生活满意度。
@@ -572,8 +694,9 @@
  用于生成能反映指定人格、心理健康状态和人口学特征的文本。作者提出 **PsychAdapter**，在 GPT\-2、Gemma\-2B、LLaMA3 上加入轻量 adapter，将连续心理分数通过层级投影注入 transformer，并结合 LoRA 训练。训练数据来自博客和 Twitter/X，并用心理语言模型给文本估计 Big Five、抑郁、生活满意度和年龄分数。实验显示，专家能以 **87\.3%** 准确率识别 Big Five 特质，以 **96\.7%** 准确率识别抑郁和生活满意度；模型还能控制多维人格组合、细粒度人格水平，并泛化到不同文本域和不同 LLM。
 
 
+<a id="i-014"></a>
 
-### [Multilingual Safety Alignment via Self\-Distillation](https://arxiv.org/pdf/2605.02971)
+### I-014. [Multilingual Safety Alignment via Self-Distillation](https://arxiv.org/pdf/2605.02971)
 
 **发现问题：**
  LLM 在英文等高资源语言中通常比较安全，但在低资源语言中容易被 jailbreak。已有多语言安全对齐方法通常需要为每种语言准备高质量安全回复数据，成本高、难扩展。作者发现：模型其实已经在高资源语言中具备安全能力，关键问题是如何把这种能力转移到低资源语言。
@@ -585,8 +708,9 @@
  用于提升 LLM 在多语言 jailbreak 场景下的安全对齐能力。作者提出 **Multilingual Self\-Distillation（MSD）**，包括 **on\-policy MSD** 和 **off\-policy MSD** 两种版本，并设计 **Dual\-Perspective Safety Weighting（DPSW）**，对拒答、风险判断等 safety\-critical tokens 加大蒸馏权重。实验覆盖 Qwen\-2\.5\-7B、Qwen\-3\-8B、LLaMA\-2\-7B、LLaMA\-3\-8B，评测 MultiJail、PKU\-SafeRLHF、MMMLU、MGSM，语言包括英文、中文、阿拉伯语、孟加拉语、斯瓦希里语、爪哇语等。结果显示，MSD 能显著降低多语言攻击成功率，泛化到未见语言，同时基本保持通用能力和数学推理能力。
 
 
+<a id="i-015"></a>
 
-### [Manifold Steering Reveals the Shared Geometry of Neural Network Representation and Behavior](https://arxiv.org/pdf/2605.05115)
+### I-015. [Manifold Steering Reveals the Shared Geometry of Neural Network Representation and Behavior](https://arxiv.org/pdf/2605.05115)
 
 **发现问题：**
  现有 activation steering 通常默认表示空间是平的，只要找到一个方向并线性相加就能控制行为。但作者发现：很多概念在模型内部不是一条直线，而是弯曲的 manifold。线性 steering 会直接切过这些弯曲结构的内部，导致输出“跳跃”、不自然、甚至崩坏。
@@ -598,8 +722,9 @@
  用于验证神经网络内部表示几何是否因果地控制模型行为，并提出更自然的 steering 方法。作者先拟合 **activation manifold** 和 **behavior manifold**，发现二者在 weekdays、months、letters、ages 上近似等距；再比较 **linear steering** 和 **manifold steering**，结果显示 manifold steering 能让输出概率按概念顺序平滑转移，而 linear steering 会出现非相邻概念之间的“teleportation”。实验覆盖 Llama 3\.1 8B 的时间、字母、年龄推理任务，以及 in\-context learning 的 grid / cylinder 图结构任务，并扩展到 Mountain Car 视觉 world model。结果说明：尊重 activation manifold 的干预能产生更自然、更可控的行为轨迹。
 
 
+<a id="i-016"></a>
 
-### [Don’t Retrain—Align](https://arxiv.org/pdf/2605.06885)
+### I-016. [Don’t Retrain—Align](https://arxiv.org/pdf/2605.06885)
 
 **发现问题：**
  Diffusion LM 有非顺序生成、双向编辑等优势，但从头训练成本很高。已有 AR→DLM 转换方法通常只是复用 AR 参数，再继续做 denoising training；但作者认为这些方法没有显式保护 AR 模型已经学到的内部表示结构，导致 DLM 仍在重复学习语言表示。
@@ -611,8 +736,9 @@
  用于高效地把 autoregressive LM 转换成 masked diffusion LM。作者提出 **REPR\-ALIGN**：把 AR 模型冻结作为 teacher，把同架构 DLM student 初始化为 AR 权重，只把 causal attention 改成 bidirectional attention；训练时同时优化 masked denoising loss，并用 layer\-wise cosine loss 对齐 DLM 和 frozen AR 的 hidden states。实验基于 Qwen3\-0\.6B、1\.7B、4B，在 Nemotron\-SFT\-Code 上训练，评测 HumanEval、HumanEval\+、MBPP、MBPP\+。结果显示，REPR\-ALIGN 能加速 AR→DLM 转换，在 HumanEval pass@10 上显著提升，低数据场景也有效，并且冻结 embedding / MLP 后还能提升训练吞吐。
 
 
+<a id="i-017"></a>
 
-### [Correct When Paired, Wrong When Split](https://github.com/TingchaoFu/DECODE/blob/main/paper.pdf)
+### I-017. [Correct When Paired, Wrong When Split](https://github.com/TingchaoFu/DECODE/blob/main/paper.pdf)
 
 **发现问题：**
  现有 MLLM 知识编辑方法通常只看图文配对输入下答案是否改对。但作者发现：模型在 **text\-image paired query** 下能回答新知识，一旦拆成 **text\-only** 或 **image\-only grounding** 查询，就可能回到旧答案。作者称这个现象为 **editing decoupling failure**。
@@ -624,8 +750,9 @@
  用于解决多模态大模型知识编辑中的跨模态不一致问题。作者提出 **DECODE**，先根据 text\-only、image\-trigger、standard multimodal 三种查询计算 neuron contribution score，定位 **text neurons** 和 **visual neurons**；再用 two\-stream editing 分别给两组 FFN neurons 加 learnable offsets，并用 target loss 更新目标知识、用 locality loss 保持无关知识不变。实验覆盖 InstructBLIP、LLaVA\-v1\.5、Qwen\-VL，并基于 MMKE 构造 modality\-split 测试集。结果显示，DECODE 能同时提升 text\-only 和 multimodal reliability / generality，并比 FT、SERAC、IKE、FiNE 更好地缓解 editing decoupling failure。
 
 
+<a id="i-018"></a>
 
-### [Towards the Explainability of Protein Language Models](https://arxiv.org/pdf/2506.19532) （子刊）
+### I-018. [Towards the Explainability of Protein Language Models](https://arxiv.org/pdf/2506.19532) （子刊）
 
 **发现问题：**
  蛋白质语言模型已经能做结构预测、功能预测和蛋白设计，但它们为什么能做对、学到了什么生物规律，仍然像黑盒。作者发现：现有 XAI 方法大多只用来验证模型是否捕捉了已知生物模式，还没有真正充分用于发现新的蛋白质机制。
@@ -639,8 +766,9 @@
 
 
 
+<a id="i-019"></a>
 
-### [Turning Drift into Constraint: Robust Reasoning Alignment in Non\-Stationary Multi\-Stream Environments](https://arxiv.org/pdf/2510.04142)
+### I-019. [Turning Drift into Constraint: Robust Reasoning Alignment in Non-Stationary Multi-Stream Environments](https://arxiv.org/pdf/2510.04142)
 
 **发现问题：**
  多教师 / 多模型蒸馏通常假设不同 source MLLM 的推理都是有用知识，直接把它们融合给 student 学。但作者发现：不同大模型的推理分布并不稳定，会因为预训练偏差、架构差异和表达风格不同产生 **concept drift**。如果 student 直接模仿这些不一致的推理轨迹，就会把多个老师的偏差一起学进去，导致幻觉、语义矛盾和诊断推理错误。
@@ -652,8 +780,9 @@
  用于在非平稳、多源 MLLM 环境下做鲁棒推理对齐。作者提出 **APO（Autonomous Preference Optimization）**：第一阶段用多个 source MLLM 的推理轨迹做 supervised bootstrapping，让 Qwen2\.5\-VL\-7B student 获得多个老师的能力覆盖；第二阶段生成 consensus trajectory 作为正样本，把原始冲突推理作为 negative constraints，用 multi\-negative Plackett\-Luce preference loss 进行优化。作者还构建 **CXR\-MAX**，包含来自 GPT\-5、Gemini\-2\.5、Claude Sonnet\-4、Qwen\-VL\-Max、Grok\-4、GLM\-4\.5V、Moonshot 等 7 个 MLLM 的 **170,982** 条胸片推理轨迹。实验在 MIMIC\-CXR、MS\-CXR\-T、Open\-I、ChestXray14、CheXpert、ChestXDet10 上验证，结果显示 7B student 在只用 10% 数据且不使用放射科报告训练的情况下，平均准确率超过多个大型 source MLLM 和现有胸片诊断方法。
 
 
+<a id="i-020"></a>
 
-### [Orthogonal Model Merging](https://arxiv.org/pdf/2602.05943)
+### I-020. [Orthogonal Model Merging](https://arxiv.org/pdf/2602.05943)
 
 **发现问题：**
  现有 model merging 方法大多直接在欧氏空间里做 task vector 加法或平均，比如把多个 finetuned model 的参数差值加到 base model 上。但作者认为这样会破坏预训练权重原本的几何结构，尤其是 neuron 之间的角度关系 / hyperspherical energy，导致任务之间参数冲突、能力互相干扰和 catastrophic forgetting。
@@ -665,8 +794,9 @@
  用于把多个 task\-specific finetuned LLM / MLLM 合并成一个统一模型。作者提出 **OrthoMerge**：对于 OFT 微调模型，先把每个任务的 orthogonal matrix 映射到 Lie algebra `so(d)`，在那里做 **magnitude\-corrected averaging**，避免不同任务方向相互抵消导致更新强度变弱，再用 Cayley transform 映射回 orthogonal group。对于 LoRA / full finetuning 等非 OFT 模型，作者提出 **Orthogonal\-Residual Decoupling**：先通过 Orthogonal Procrustes problem 提取每个专家模型中的 orthogonal component，在流形上合并；剩余 residual component 继续用 TA、TIES、TSV\-M 等传统方法合并。实验覆盖 Llama\-3\.1\-8B、Qwen2\.5\-3B、Llama\-3\.2\-3B 和 Qwen2\.5\-VL\-7B\-Instruct，任务包括数学、代码、科学问答、常识问答、社交推理、多语言、安全、OCR、空间理解和医学多模态 QA。结果显示，OrthoMerge 能提升多任务合并性能，并更好保留 base model 的通用能力。
 
 
+<a id="i-021"></a>
 
-### EVA: Editing for Versatile Alignment against Jailbreaks
+### I-021. EVA: Editing for Versatile Alignment against Jailbreaks
 
 **发现问题：**
  LLM / VLM 虽然经过 RLHF、DPO 等安全对齐，但仍然容易被 jailbreak 攻击绕过。已有防御方法要么需要重新安全微调，成本高且容易损伤通用能力；要么依赖外部检测器 / prompt filter，会增加推理延迟。作者认为：jailbreak 不是模型“没有安全知识”，而是攻击把有害概念的内部激活从 harmful 区域推到了 benign 区域，导致模型误以为这是普通请求并执行。
@@ -683,9 +813,9 @@
 
 
 
+<a id="i-022"></a>
 
-
-### [ASGUARD: Activation\-Scaling Guard to Mitigate Targeted Jailbreaking Attack](https://arxiv.org/pdf/2509.25843)
+### I-022. [ASGUARD: Activation-Scaling Guard to Mitigate Targeted Jailbreaking Attack](https://arxiv.org/pdf/2509.25843)
 
 **发现问题：**
  现有 LLM 虽然做了安全对齐，但拒答机制很脆弱，尤其容易被一些很小的语言变化绕过。比如 **tense jailbreaking**：模型会拒绝 “How to make a Molotov cocktail?”，但如果改成过去式 “How did people make a Molotov cocktail?”，模型可能就把它当成历史问题来回答。作者发现，这不是模型完全不知道 harmfulness，而是安全拒答机制在某些语义改写下没有泛化好，尤其是过去式表达会绕过模型内部的 refusal pathway。
@@ -699,8 +829,9 @@
  用于缓解特定类型 jailbreak，尤其是 **past tense jailbreak**，同时尽量避免过拒答和能力下降。作者提出 **ASGUARD**：第一步用 **EAP\-IG circuit analysis** 比较 “False\-to\-True” jailbreak 成功电路和 “Always\-False” 安全拒答电路，定位只在成功 jailbreak 中出现的 tense vulnerable attention heads；第二步训练 **channel\-wise activation scaling vector**，只缩放这些 vulnerable heads 的通道激活，让模型更倾向输出安全拒答；第三步做 **Preventative Fine\-Tuning**，在 scaling vector 临时生效时微调模型，让模型学会绕开脆弱路径，训练结束后再移除 scaling vector。实验覆盖 Llama\-3\.1\-8B\-Instruct、Qwen2\.5\-7B\-Instruct、Gemma\-2\-9B\-it、OLMo\-2\-1124\-7B\-Instruct，并评测 Past Tense Jailbreak、GCG、LogiBreak、OR\-Bench\-Toxic、OR\-Bench\-Hard 和 MMLU。结果显示，ASGUARD 能显著降低 ASR，比如 Llama 上 past tense ASR 从 42% 降到 8%，GCG 从 15% 降到 1%，同时比 SFT、DPO、RepE、Circuit Breaker、RepBend 更好地平衡安全性、过拒答和通用能力。
 
 
+<a id="i-023"></a>
 
-### [Evaluating and Steering Modality Preferences in Multi\-modal LLMs](https://arxiv.org/pdf/2505.20977)
+### I-023. [Evaluating and Steering Modality Preferences in Multi-modal LLMs](https://arxiv.org/pdf/2505.20977)
 
 **发现问题：**
  多模态大模型在同时看到图像和文本时，并不一定会“公平地融合两种信息”。作者发现：当图像和文本给出冲突证据时，很多 MLLM 会明显偏向某一种模态，尤其是偏向文本。也就是说，模型表面上是多模态推理，但实际可能在关键决策时更相信 text context，而不是 image context。
@@ -714,8 +845,9 @@
  用于评估和控制 MLLM 的图文模态偏好。作者构建 **MC² benchmark**，包含 2,000 个图文冲突样本，覆盖 sport、attribute、sentiment、positional、counting、color、activity、object 等 8 类任务；每个样本保证模型单独看图像或单独看文本都能理解，从而排除单模态理解能力差异的干扰。作者用 **Vision Ratio** 衡量模型偏向视觉还是文本，并评估 20 个开源 MLLM 和 GPT\-4o\-mini。结果显示，大多数模型明显偏文本，只有 Qwen2\.5\-VL、InternVL3 等模型表现出更强视觉偏好；同时 Vision Ratio 和多模态下游任务表现高度相关，Spearman ρ 达到 **0\.964**。在方法上，作者提出 **Modality Preference Probing \& Steering**：先用“基于图像回答”和“基于文本回答”两种指令提取 hidden\-state 差分方向，再在推理时把该 steering vector 加到指定层 hidden states 上，从而无需微调地增强视觉或文本偏好。实验表明，该方法在 MC²、MathVista、TallyQA、VSR、AmbigCaps 和 PhD hallucination benchmark 上优于 instruction design、CoT 和 few\-shot prompting。总体上，这篇文章把 MLLM 的模态偏好从“行为观察”推进到“可测量、可解释、可干预”的表示层控制问题。
 
 
+<a id="i-024"></a>
 
-### [Toward Stable Value Alignment: Introducing Independent Modules for Consistent Value Guidance](https://arxiv.org/pdf/2605.11712)
+### I-024. [Toward Stable Value Alignment: Introducing Independent Modules for Consistent Value Guidance](https://arxiv.org/pdf/2605.11712)
 
 **发现问题：**
  现有 LLM 对齐方法通常直接改 backbone 参数，或者在 residual stream 里注入 steering vector。但作者认为：模型的 residual stream 本身非常动态，任务信息、上下文信息会不断改变 hidden states，导致 value representation 很脆弱。也就是说，安全、伦理这类 value signals 如果直接绑在 backbone 内部表示上，很容易被强任务信号或 adversarial prompt 扭曲，造成不稳定对齐。
@@ -731,8 +863,9 @@
 **Latent Value Bridge（LVB）**：根据 value score 的梯度得到修正方向，再生成一组可学习 **Bridge Tokens**，插入到 prompt 后作为 attention targets，在 decoding 过程中周期性刷新，从而动态纠正生成轨迹。训练采用三阶段 curriculum：先做 unconditional safety discrimination，再做 conditional discrimination，最后冻结 backbone 和 value encoder，只训练 bridge generator 做 value\-guided generation。实验覆盖 GPT\-2、Qwen2\-1\.5B、Llama\-3\.2\-3B\-Instruct、Mistral\-7B\-Instruct\-v0\.2，在 WildGuardMix、BeaverTails、HarmBench 上评估。结果显示，SVGT 通常能将 harmful score / ASR 降低 70% 以上，并把 HarmBench refusal rate 提升到 75% 以上，同时相比 ITI、RE\-Control 这类直接 hidden\-state intervention，更好保持 PPL 和生成流畅性。总体上，这篇文章把 value alignment 从“直接改模型内部表示”推进到“独立价值模块 \+ 动态桥接 token”的模块化对齐框架。
 
 
+<a id="i-025"></a>
 
-### [A Study on Hidden Layer Distillation for Large Language Model Pre\-Training](https://arxiv.org/pdf/2605.11513)
+### I-025. [A Study on Hidden Layer Distillation for Large Language Model Pre-Training](https://arxiv.org/pdf/2605.11513)
 
 **发现问题：**
  LLM 蒸馏里最常用的是 **logit\-based KD**，也就是让 student 学 teacher 的输出概率分布。但 teacher 的中间层 hidden states 里可能也有语义信息，按理说可以帮助 student 学得更好。作者发现：虽然 **Hidden Layer Distillation（HLD）** 在 BERT、encoder 模型或任务微调阶段经常有效，但它在 decoder\-only LLM 的大规模 pre\-training 阶段并没有被系统验证。
@@ -749,8 +882,9 @@
  实验在 C4 perplexity、Wikitext\-103、HellaSwag、WinoGrande、LAMBADA、PIQA、ARC\-E 上评估。结果显示：标准 KD 明显强于 NLL；HLDC 基本和 KD 持平；HLDF 在 C4 perplexity 上有稳定但很小的提升，但下游任务没有一致增益。总体上，这篇文章说明：hidden states 里可能有可提取的 latent signal，但当前简单 HLD 还不足以在 decoder\-only LLM pre\-training 中稳定超过强 KD baseline，未来可能需要更好的 loss、adapter 结构或训练协议。
 
 
+<a id="i-026"></a>
 
-### [Model Spec Midtraining: Improving How Alignment Training Generalizes](https://arxiv.org/pdf/2605.02087)
+### I-026. [Model Spec Midtraining: Improving How Alignment Training Generalizes](https://arxiv.org/pdf/2605.02087)
 
 **发现问题：**
  现在很多对齐方法都是直接用 demonstration data 做 alignment fine\-tuning，让模型模仿符合 Model Spec / Constitution 的回答。但作者发现：这种方式容易产生 **shallow alignment**。模型可能在训练分布内回答得很对，但一到没见过的场景，就不知道应该如何泛化。原因是 demonstration data 往往只展示“该怎么做”，没有充分说明“为什么要这么做”，所以模型学到的可能只是表面行为，而不是背后的价值原则。
@@ -779,13 +913,12 @@
 
 
 
+## E. 评估与校准：能不能利用 latent knowledge 控制模型行为，并评估安全性和可靠性？
 
 
-## 评估与校准：能不能利用 latent knowledge 控制模型行为，并评估安全性和可靠性？
+<a id="e-001"></a>
 
-### 
-
-### [Self\-Distilled Reasoner: On\-Policy Self\-Distillation for Large Language Models](https://arxiv.org/pdf/2601.18734)
+### E-001. [Self-Distilled Reasoner: On-Policy Self-Distillation for Large Language Models](https://arxiv.org/pdf/2601.18734)
 
 **发现问题：**
  现有提升 LLM 推理能力的方法主要有 SFT、RLVR/GRPO、knowledge distillation，但各有问题：SFT 是 off\-policy，容易和推理时的生成分布不一致；GRPO 依赖最终答案奖励，信号稀疏、采样成本高；on\-policy distillation 虽然有 dense token\-level feedback，但通常需要一个额外的大 teacher model。
@@ -797,7 +930,9 @@
 **任务：**
  用于 **LLM mathematical reasoning post\-training**，目标是在数学推理任务上提升模型能力。作者在 Qwen3\-1\.7B、4B、8B 上实验，使用 OpenThoughts 数学推理数据训练，并在 AIME 2024、AIME 2025、HMMT 2025 上评测。结果显示 OPSD 比 SFT 更好，和 GRPO 相当或更优，但 token efficiency 明显更高。
 
-### [Language Models \(Mostly\) Know What They Know](https://arxiv.org/pdf/2207.05221) （有点老）
+<a id="e-002"></a>
+
+### E-002. [Language Models (Mostly) Know What They Know](https://arxiv.org/pdf/2207.05221) （有点老）
 
 **发现问题：**
  现有语言模型经常会“答错但很自信”，因此作者关注一个问题：模型是否知道自己什么时候知道、什么时候不知道？也就是模型能不能判断自己的答案是否正确，以及能不能预测自己是否有能力回答某个问题。
@@ -812,8 +947,9 @@
 
 
 
+<a id="e-003"></a>
 
-### [Domain\-Filtered Knowledge Graphs from Sparse Autoencoder Features](https://arxiv.org/pdf/2604.23829)
+### E-003. [Domain-Filtered Knowledge Graphs from Sparse Autoencoder Features](https://arxiv.org/pdf/2604.23829)
 
 **发现问题：**
  SAE 可以从模型内部提取大量可解释 feature，但这些 feature 通常只是一个“扁平清单”。里面混有很多通用、格式、弱相关特征，真正的领域概念被分散在不同 feature 中，而且 feature 之间缺少关系结构，导致很难看出模型内部到底如何组织某个领域知识。
@@ -824,7 +960,9 @@
 **任务：**
  用于把大规模 SAE feature 转换成领域过滤后的内部知识图谱，帮助分析模型内部知识结构和局部推理机制。作者在生物教材语料上，用 Gemma Scope residual SAEs 和 layer\-20 到 layer\-21 的 transcoder，先通过 contrastive filtering 得到 biology\-specific concept universe，再构建多粒度 co\-occurrence graph 和 transcoder mechanism graph，并自动生成边标签。实验显示，这些图能恢复教材章节和小节结构，也能把一句话中上千个激活 feature 压缩成可读的局部机制图。
 
-### [LLM DNA: Tracing Model Evolution via Functional Representations](https://openreview.net/pdf?id=UIxHaAqFqQ)
+<a id="e-004"></a>
+
+### E-004. [LLM DNA: Tracing Model Evolution via Functional Representations](https://openreview.net/pdf?id=UIxHaAqFqQ)
 
 **发现问题：**
  现在开源 LLM 数量非常多，但模型之间到底是不是同源、是否经过微调/蒸馏/改造，很多时候文档并不清楚。已有方法要么依赖具体任务，要么要求固定模型集合，要么受 tokenizer 和架构限制，难以统一分析不同 LLM 的“血缘关系”。
@@ -836,8 +974,9 @@
  用于识别 LLM 之间的功能相似性、潜在血缘关系和演化路径。作者提出 **RepTrace**，先给不同 LLM 输入一组 prompts，收集模型回复，再用 sentence embedding 把回复转成语义向量，拼接后用随机高斯投影压缩成低维 **LLM DNA**。实验覆盖 305 个 Hugging Face LLM，包括 Qwen、Llama、Gemma、Pythia、Flan\-T5 等。结果显示，LLM DNA 能检测已知和未记录的模型关系，支持 training\-free model routing，并能构建 LLM phylogenetic tree，反映从 encoder\-decoder 到 decoder\-only、从旧模型到新模型的演化趋势。
 
 
+<a id="e-005"></a>
 
-### [Locate, Steer, and Improve: A Practical Survey of Actionable Mechanistic Interpretability in LLMs](https://arxiv.org/pdf/2601.14004)
+### E-005. [Locate, Steer, and Improve: A Practical Survey of Actionable Mechanistic Interpretability in LLMs](https://arxiv.org/pdf/2601.14004)
 
 **发现问题：**
  现有 Mechanistic Interpretability 综述大多把 MI 当作“观察工具”，主要总结模型内部有哪些机制，但缺少一个清晰框架说明：如何先定位关键内部结构，再干预这些结构，最后真正提升模型能力、安全性或效率。也就是说，MI 还没有被系统整理成一套可操作的“模型改造流程”。
@@ -849,8 +988,9 @@
  用于系统总结“可行动的机制可解释性”如何从内部分析走向模型干预和优化。文章先定义 LLM 中的核心可解释对象，然后归纳六类定位方法：**Magnitude Analysis、Causal Attribution、Gradient Detection、Probing、Vocabulary Projection、Circuit Discovery**；再总结三类干预方法：**Amplitude Manipulation、Targeted Optimization、Vector Arithmetic**。最后按应用目标整理为三大方向：**Improve Alignment、Improve Capability、Improve Efficiency**，覆盖安全可靠性、公平性、人格角色、多语言、知识管理、逻辑推理、高效训练和高效推理等场景。总体上，这篇综述把 MI 从“看懂模型”推进到“定位、操控并改进模型”。
 
 
+<a id="e-006"></a>
 
-### [From Parameter Dynamics to Risk Scoring](https://arxiv.org/pdf/2605.04572)
+### E-006. [From Parameter Dynamics to Risk Scoring](https://arxiv.org/pdf/2605.04572)
 
 **发现问题：**
  LLM 安全对微调非常脆弱，甚至用少量看似无害的 benign samples 做 SFT，也可能破坏原来的安全对齐。已有方法多是比较微调前后的参数或表示变化，但忽略了训练过程中的动态轨迹。作者发现：安全退化不是突然发生的，而是参数在微调过程中逐步向 **danger direction** 累积漂移，最终走出安全区域。
@@ -863,8 +1003,9 @@
 **danger projection − safety projection** 得到样本级风险分数。实验覆盖 Qwen3\-8B、Llama\-3\.1\-8B\-Instruct、Llama\-2\-7B\-Chat，以及 Dolly、Alpaca 数据集；评估包括 CategoricalHarmfulQA、AdvBench、HEx\-PHI。结果显示，SQSD 能稳定区分高风险和低风险样本，并且风险排序可以跨模型架构、模型规模和 LoRA / Full fine\-tuning 迁移。
 
 
+<a id="e-007"></a>
 
-### [Learning Uncertainty from Sequential Internal Dispersion in Large Language Models](https://arxiv.org/pdf/2604.15741v1)
+### E-007. [Learning Uncertainty from Sequential Internal Dispersion in Large Language Models](https://arxiv.org/pdf/2604.15741v1)
 
 **发现问题：**
  现有幻觉检测 / 不确定性估计方法要么依赖多次采样，计算开销大；要么只看最后一个 token 或平均 hidden states，容易丢失序列中的关键信号。作者发现：模型生成错误答案时，不确定性会体现在不同层 hidden states 的“分散程度”变化中，而不是简单满足某种固定的层间变化模式。
@@ -878,8 +1019,9 @@
 
 
 
+<a id="e-008"></a>
 
-### [Black\-Box Detection of LLM\-Generated Text Using Generalized Jensen Shannon Divergence](https://arxiv.org/pdf/2510.07500)
+### E-008. [Black-Box Detection of LLM-Generated Text Using Generalized Jensen Shannon Divergence](https://arxiv.org/pdf/2510.07500)
 
 **发现问题：**
  LLM 生成文本越来越接近人类文本，传统检测方法要么需要训练分类器、迁移性差；要么依赖 likelihood / entropy 等全局统计，在黑盒代理模型不匹配时不稳定；还有一些方法需要对每个输入做扰动或重生成，计算成本很高。作者发现：更稳定的信号不在单个 token 的概率大小，而在 token surprisal 的动态变化模式里。
@@ -891,8 +1033,9 @@
  用于黑盒检测 LLM 生成文本。作者提出 **SurpMark**：先用一个 proxy LM 计算文本 token\-level surprisal，再用 k\-means 把 surprisal 分成若干状态，构建一阶 Markov transition matrix；离线阶段分别构建 human / machine reference transition matrices，在线阶段对测试文本计算 transition matrix，并用 **Generalized Jensen\-Shannon Divergence（GJS）** 比较它更接近 human 还是 machine。实验覆盖 XSum、WritingPrompts、SQuAD、WMT19、HC3、DetectRL、DAIGT、Dolly，生成模型包括 GPT\-2XL、GPT\-J、GPT\-NeoX、OPT、Llama、Gemma、Gemini、GPT\-4\.1\-mini、GPT\-5\-Chat。结果显示 SurpMark 在黑盒、跨域、混合生成器、非英文、改写攻击和低 FPR 场景下都优于或接近强基线，并且不需要每个输入重新生成样本，推理成本更低。
 
 
+<a id="e-009"></a>
 
-### [Depression and Anxiety Characterization and Detection with Multimodal Deep Learning](https://www.nature.com/articles/s44220-026-00632-6) \(子刊\)
+### E-009. [Depression and Anxiety Characterization and Detection with Multimodal Deep Learning](https://www.nature.com/articles/s44220-026-00632-6) (子刊)
 
 **发现问题：**
  抑郁和焦虑很难只靠单一数据判断：文本可能受文化表达影响，生理信号可能把焦虑和普通压力混淆，临床量表和访谈又成本高、难大规模使用。作者总结发现：多模态深度学习虽然能融合文本、音频、视频、生理信号和脑影像，但目前仍受限于数据规模小、模态缺失、数据偏差、隐私限制和临床验证不足。
@@ -906,8 +1049,9 @@
 
 
 
+<a id="e-010"></a>
 
-### [Restoring Exploration after Post\-Training: Latent Exploration Decoding for Large Reasoning Models](https://arxiv.org/pdf/2602.01698)
+### E-010. [Restoring Exploration after Post-Training: Latent Exploration Decoding for Large Reasoning Models](https://arxiv.org/pdf/2602.01698)
 
 **发现问题：**
  现在很多推理模型经过 RL post\-training 后，pass@1 变强了，但探索能力反而塌缩了。以前提高 sampling temperature 可以让模型生成更多不同解法，从而提升 pass@n；但作者发现，在 MiMo\-7B\-RL、Qwen3\-Thinking 这类新 LRMs 上，提高 temperature 不但不能提升 pass@n，有时还会降低性能。原因是 RL 后训练把最终层 posterior 压得太尖锐、低熵，模型过早确信某条推理路径，导致采样也采不出真正多样的解法。
@@ -920,8 +1064,9 @@
  用于恢复 RL\-post\-trained reasoning model 的测试时探索能力，并提升 pass@1 / pass@n。作者提出 **Latent Exploration Decoding（LED）**：先用 early\-exit 方法把中间层 hidden states 通过 LM head 解码成 latent posteriors；再只保留最终层 top\-k token，避免采到无意义 token；然后从最终层往中间层做 cumulative aggregation，选择 entropy 最大的 depth configuration 作为 exploration posterior；最后根据最终层置信度，在 exploitation 和 exploration 之间自适应切换，并且只在 **DeepThink 阶段**使用探索。实验覆盖 Qwen3\-4B\-Thinking、MiMo\-7B\-RL、Qwen3\-30B\-A3B\-Thinking、DeepSeek\-R1\-Distill\-Llama\-8B、QwQ\-32B，任务包括 AIME2024/2025、GSM8K、MATH\-500、GPQA\-Diamond、LiveCodeBench。结果显示 LED 平均提升 pass@1 和 pass@16，并且几乎不增加生成长度；作为 GRPO rollout 策略时，还能带来更快 reward 增长和更高最终性能。
 
 
+<a id="e-011"></a>
 
-### [Information Flow Reveals When to Trust Language Models](https://openreview.net/pdf?id=gJi0Hp7nLI)
+### E-011. [Information Flow Reveals When to Trust Language Models](https://openreview.net/pdf?id=gJi0Hp7nLI)
 
 **发现问题：**
  LLM 在 RAG 问答里经常会“看起来很自信地猜答案”，但现有不确定性评估方法大多只看输出概率、entropy、多次采样一致性，或者只看检索文档和问题是否相关。作者认为这些方法不够，因为它们没有真正看模型内部是怎么使用 context 的。也就是说，模型回答对不对，不只取决于 context 有没有答案，还取决于模型内部的信息流是否真的从关键 context token 流向了最终答案。
@@ -935,8 +1080,9 @@
  用于评估 RAG 场景下 LLM 回答是否可靠，并输出 calibrated confidence。作者提出两个内部信息流指标：**Emergence Order** 和 **Contribution Layout**。前者表示哪些输入 token 更早进入 principal information flow，越早说明越重要；后者统计每个 context token 通过所有 admissible paths 对最终输出的贡献。然后作者提出 **simulatability**，衡量模型内部重要 token 排序和 reranker / Shapley 得到的 relevance layout 是否一致；再提出 **concentration**，衡量贡献是否集中在少数关键 token 上。最后把这些特征和 context relevance score 一起输入 XGBoost calibrator，预测回答可信度。实验在 SQuAD2\.0、HotpotQA、MS MARCO 上进行，模型包括 LLaMA\-3\.2\-3B\-Instruct 和 Gemma\-3\-4B\-it。结果显示该方法在 AUROC、AUPRC、ECE 和相关性指标上优于 PPL、P\(True\)、Regular Entropy、Semantic Entropy、KnowingMore、Utility Ranker 等基线；同时消融实验显示，删掉信息流排名靠前的 context token 会显著破坏原本正确的回答，说明这些内部信息流确实具有因果意义。
 
 
+<a id="e-012"></a>
 
-### [Tracing Uncertainty in Language Model “Reasoning”](https://arxiv.org/pdf/2605.07776)
+### E-012. [Tracing Uncertainty in Language Model “Reasoning”](https://arxiv.org/pdf/2605.07776)
 
 **发现问题：**
  现在很多 LLM 会生成很长的 CoT / reasoning trace，看起来像是在“推理”，但我们并不清楚这些中间 token 什么时候可靠、什么时候已经走偏。已有方法通常把整条 trace 压成一个分数，比如 Self\-Certainty 或最终答案置信度，这会丢掉生成过程中的动态信息。作者发现：正确和错误的 reasoning trace 在表面文本上可能都很像，但它们的 **uncertainty 随时间变化的轨迹** 是不一样的。
@@ -952,8 +1098,9 @@
 
 
 
+<a id="e-013"></a>
 
-### [Towards Generation\-Efficient Uncertainty Estimation in Large Language Models](https://arxiv.org/pdf/2605.06053)
+### E-013. [Towards Generation-Efficient Uncertainty Estimation in Large Language Models](https://arxiv.org/pdf/2605.06053)
 
 **发现问题：**
  现有 LLM uncertainty estimation 通常要等模型完整生成答案，甚至要采样多次完整回答，才能判断输出是否可靠。这在医疗、金融等高风险场景里成本很高，也太晚了：模型可能已经生成了一大段看似可信但错误的内容。作者发现：评估不确定性不一定需要完整 generation，很多有效信号其实在生成早期的 logits 里就已经出现了。
@@ -971,8 +1118,9 @@
 
 
 
+<a id="e-014"></a>
 
-### [Evaluating the Statistical Realism of LLM\-generated Social Science Data](https://www.pnas.org/doi/10.1073/pnas.2538145123) \(PNAS\)
+### E-014. [Evaluating the Statistical Realism of LLM-generated Social Science Data](https://www.pnas.org/doi/10.1073/pnas.2538145123) (PNAS)
 
 **发现问题：**
  现在很多人想用 LLM 生成社会科学数据，比如模拟问卷回答、人口样本或人生轨迹。但作者指出：现有评估经常看 individual\-level prediction，也就是模型能不能预测某个人的答案；这不符合社会科学的核心需求。社会科学更关心的是一个样本能不能代表总体，能不能复现真实社会中的分布、相关性和结构关系。作者发现：当前 LLM 生成的数据在 population\-level statistical realism 上明显不足，尤其容易把真实世界的复杂异质性压缩成少数“典型人群”模式。
@@ -995,8 +1143,9 @@
 
 
 
+<a id="e-015"></a>
 
-### [Into the Gray Zone: Domain Contexts Can Blur LLM Safety Boundaries](https://arxiv.org/pdf/2604.15717)
+### E-015. [Into the Gray Zone: Domain Contexts Can Blur LLM Safety Boundaries](https://arxiv.org/pdf/2604.15717)
 
 **发现问题：**
  LLM 安全对齐面临一个核心矛盾：同一类知识在不同场景下可能既有帮助也有风险。比如安全研究、化学、医学、网络安全等领域，本来就需要讨论敏感知识；但模型一旦看到“专业领域上下文”，就可能把危险请求误判成合法研究需求。作者发现：**domain context 会模糊模型的安全边界**，让模型进入一种既不像明显 benign、也不像明显 harmful 的 **gray zone**，从而导致拒答判断不稳定。
@@ -1025,9 +1174,9 @@
 
 
 
+<a id="e-016"></a>
 
-
-### [Towards Intrinsic Interpretability of Large Language Models: A Survey of Design Principles and Architectures](https://arxiv.org/pdf/2604.16042)
+### E-016. [Towards Intrinsic Interpretability of Large Language Models: A Survey of Design Principles and Architectures](https://arxiv.org/pdf/2604.16042)
 
 **发现问题：**
  现在很多 LLM interpretability 工作主要是 **post\-hoc explanation**，也就是模型训练完之后，再用外部工具去解释它，比如 attribution、probing、LogitLens、SAE、causal intervention 等。但作者指出：这些方法本质上是在“事后近似解释”模型，容易存在 **fidelity gap**，也就是解释结果不一定真实对应模型内部计算过程。尤其是 LLM 很复杂，post\-hoc 方法虽然灵活，但很难把局部解释整合成一个稳定、可信的整体机制理解。
@@ -1061,8 +1210,9 @@
 总体上，这篇文章不是提出一个具体新模型，而是把 LLM 可解释性从“训练后解释黑盒”推进到“设计时构建可解释模型”的视角，并给出一个比较清晰的 taxonomy。它适合用来作为 intrinsic interpretability 方向的综述入口。
 
 
+<a id="e-017"></a>
 
-### [Assessing the Creativity of Large Language Models: Testing, Limits, and New Frontiers](https://arxiv.org/pdf/2605.13450)
+### E-017. [Assessing the Creativity of Large Language Models: Testing, Limits, and New Frontiers](https://arxiv.org/pdf/2605.13450)
 
 **发现问题：**
  现在很多工作会直接拿人类创造力测试来评估 LLM，比如 DAT、CDAT、PACE、RAT，然后据此说某个模型“更有创造力”。但作者指出：这些测试对 **机器创造力** 是否有效，其实没有被系统验证。更严重的是，一个测试分数高，可能只是因为模型通用能力强，而不是真的更有创造力。比如 PACE 和 creative writing benchmark 相关性很高，但控制 general capability 后，相关性明显下降，说明它很大程度上可能只是能力代理。
@@ -1092,4 +1242,3 @@
 实验结果显示：DAT 在 creative writing 上最好，CDAT 在 divergent thinking 上最好，但没有任何已有测试能显著预测 scientific ideation。为了解决这个问题，作者提出 **DRAT（Divergent Remote Association Test）**。它结合了 DAT 和 RAT：模型需要生成多个彼此差异很大的词，同时这些词还要能和多个 anchor words 产生隐喻关联。也就是说，DRAT 同时测试 **divergent thinking** 和 **convergent thinking**。
 
 结果显示，DRAT 是第一个能显著预测 scientific ideation 的自动化测试，在 LiveIdeaBench 上达到显著 validity 和 specificity；并且它的效果不能简单由 DAT \+ RAT 的线性组合替代，说明“同时做发散和收敛”比单独测两种能力再相加更有效。总体上，这篇文章把 LLM 创造力评估从“套用人类创造力测试”推进到“验证测试是否真的预测创造性成果，并区分创造力与通用能力”的更严谨框架。
-
