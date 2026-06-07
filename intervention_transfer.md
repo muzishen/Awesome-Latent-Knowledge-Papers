@@ -34,6 +34,7 @@
 | I-024 | [Toward Stable Value Alignment: Introducing Independent Modules for Consistent Value Guidance](#i-024) | 2026 | arXiv preprint | 独立价值模块 |
 | I-025 | [A Study on Hidden Layer Distillation for Large Language Model Pre-Training](#i-025) | 2026 | arXiv preprint | 隐藏层蒸馏 |
 | I-026 | [Model Spec Midtraining: Improving How Alignment Training Generalizes](#i-026) | 2026 | arXiv preprint | Model Spec 中训练 |
+| I-027 | [Investigating Cross-Modal Skill Injection: Scenarios, Methods, and Hyperparameters](#i-027) | 2026 | ACL 2026 Oral | 跨模态技能注入 |
 
 ---
 
@@ -525,3 +526,16 @@
 
 第三，作者把 MSM 当作研究 **Model Spec science** 的工具，比较什么样的 spec 更容易产生泛化。结果发现：只写规则不够，解释规则背后的价值会更好；具体指导比笼统说“做一个有良好价值观的 agent”更有效。总体上，这篇文章说明：Model Spec 不只是给人类开发者看的说明书，也可以直接作为训练信号，帮助模型学到“为什么要对齐”，从而改善 OOD 对齐泛化。
 
+
+<a id="i-027"></a>
+
+### I-027. [Investigating Cross-Modal Skill Injection: Scenarios, Methods, and Hyperparameters](https://arxiv.org/abs/2605.19523)
+
+**发现问题：**
+ VLM 的领域适配通常依赖图文配对数据和监督微调，但在医疗、法律、科学图表等专业场景中，高质量图文数据既稀缺又可能涉及隐私，微调成本也很高。已有 model merging 多数研究同构 LLM 之间的能力聚合，却缺少对“把文本专家 LLM 的领域能力注入 VLM 语言主干”这一跨模态技能注入问题的系统分析：哪些能力适合注入、哪些融合方法更稳、超参数搜索应如何做，都还没有清晰答案。
+
+**Insight：**
+ 作者的核心 insight 是：跨模态技能注入不是普通的对称模型融合，而是一种非对称的能力转移。专家 LLM 提供领域语言能力，VLM 保留视觉感知能力，融合目标是诱导出两个原始模型单独都不具备的组合能力。实验显示，这种方式更适合迁移指令遵循和跨语言能力，数学推理这类强依赖视觉感知与多步逻辑耦合的能力更难迁移；方法上，Task Arithmetic 和 DARE 这类经典融合方法整体最稳，DARE 在不同场景中一致性最好，而免调参的 NaN 可作为低成本探索基线；超参数上，“融合系数之和等于 1”并非普遍最优，GP-BO 的样本效率更高。
+
+**任务：**
+ 用于系统评估 **cross-modal skill injection / VLM domain adaptation via model merging**：将领域专家 LLM 通过参数融合注入 VLM 的语言 backbone，在不使用额外图文训练数据、几乎不增加推理成本的情况下增强 VLM 的专业能力。论文围绕三个维度展开：第一，比较语言能力、数学推理、指令遵循三类注入场景；第二，比较 classic merging、data-aware merging、tuning-free merging 等方法，包括 TA、DARE、TIES、RegMean、Fisher、WUDI、TSV、MetaGPT、NaN；第三，分析融合系数和密度等超参数的搜索策略。实验覆盖 Idefics2、LLaVA、Qwen2-VL 等 VLM，以及中文、日文、数学、指令遵循专家 LLM，评测包括 CMMMU、JMMMU、MathVista、MathVerse、MIA-Bench、WildVision。主要结果表明：指令遵循提升最明显，跨语言能力也能稳定迁移，数学推理收益有限且可能牺牲通用视觉理解；经典融合方法整体最优但依赖调参，NaN 适合作为无需域内数据的快速试探方案。
