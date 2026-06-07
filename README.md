@@ -4,7 +4,7 @@ A curated reading list on latent knowledge in large models, organized into three
 | Topic | File | Scope |
 |---|---|---|
 | D. 发现与探测 / Discovery & Probing | [discovery_probing.md](discovery_probing.md) | 24 papers |
-| I. 干预和转移 / Intervention & Transfer | [intervention_transfer.md](intervention_transfer.md) | 26 papers |
+| I. 干预和转移 / Intervention & Transfer | [intervention_transfer.md](intervention_transfer.md) | 27 papers |
 | E. 评估与校准 / Evaluation & Calibration | [evaluation_calibration.md](evaluation_calibration.md) | 17 papers |
 
 ## Paper Overview
@@ -68,6 +68,7 @@ A curated reading list on latent knowledge in large models, organized into three
 | I-024 | [Toward Stable Value Alignment: Introducing Independent Modules for Consistent Value Guidance](intervention_transfer.md#i-024) | 2026 | arXiv preprint | 独立价值模块 |
 | I-025 | [A Study on Hidden Layer Distillation for Large Language Model Pre-Training](intervention_transfer.md#i-025) | 2026 | arXiv preprint | 隐藏层蒸馏 |
 | I-026 | [Model Spec Midtraining: Improving How Alignment Training Generalizes](intervention_transfer.md#i-026) | 2026 | arXiv preprint | Model Spec 中训练 |
+| I-027 | [Investigating Cross-Modal Skill Injection: Scenarios, Methods, and Hyperparameters](intervention_transfer.md#i-027) | 2026 | ACL 2026 Oral | 跨模态技能注入 |
 
 ### E. 评估与校准 / Evaluation & Calibration
 
