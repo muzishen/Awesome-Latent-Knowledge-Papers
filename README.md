@@ -36,6 +36,7 @@ A curated reading list on latent knowledge in large models, organized into three
 | D-021 | [Reasoning Emerges from Constrained Inference Manifolds in Large Language Models](discovery_probing.md#d-021) | 2026 | arXiv preprint | 推理流形健康度 |
 | D-022 | [When Looking Is Not Enough: Visual Attention Structure Reveals Hallucination in MLLMs](discovery_probing.md#d-022) | 2026 | arXiv preprint | 视觉注意力幻觉 |
 | D-023 | [Mechanistic Data Attribution: Tracing the Training Origins of Interpretable LLM Units](discovery_probing.md#d-023) | 2026 | arXiv preprint | 训练数据到电路 |
+| D-024 | [The Geometry of Concepts: Sparse Autoencoder Feature Structure](discovery_probing.md#d-024) | 2025 | Entropy | SAE 概念几何 |
 
 ### I. 干预和转移 / Intervention & Transfer
 
