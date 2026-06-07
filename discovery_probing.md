@@ -31,6 +31,7 @@
 | D-021 | [Reasoning Emerges from Constrained Inference Manifolds in Large Language Models](#d-021) | 2026 | arXiv preprint | 推理流形健康度 |
 | D-022 | [When Looking Is Not Enough: Visual Attention Structure Reveals Hallucination in MLLMs](#d-022) | 2026 | arXiv preprint | 视觉注意力幻觉 |
 | D-023 | [Mechanistic Data Attribution: Tracing the Training Origins of Interpretable LLM Units](#d-023) | 2026 | arXiv preprint | 训练数据到电路 |
+| D-024 | [The Geometry of Concepts: Sparse Autoencoder Feature Structure](#d-024) | 2025 | Entropy | SAE 概念几何 |
 
 ---
 
@@ -463,3 +464,17 @@
 更重要的是，作者用数据干预验证了 induction head 和 **in\-context learning（ICL）** 的因果联系：增强 induction head 形成时，ICL score 同步提升；削弱 induction head 时，ICL score 同步下降。这比以前只观察相关性更强，说明 induction head 很可能是 ICL 的重要底层机制之一。
 
 最后，作者提出 **mechanistic data augmentation**：先用小模型 MDA 找到高影响样本，再让 LLM 提取其中的重复结构模式，自动生成合成训练数据。结果显示，这些 synthetic pattern 能跨模型规模加速 induction head 形成，甚至用 14M 模型发现的模式也能有效迁移到 160M。总体上，这篇文章把 mechanistic interpretability 从“解释模型内部有什么”推进到“追踪这些机制由哪些训练数据造成，并用数据主动调控模型内部机制”。
+
+<a id="d-024"></a>
+
+### D-024. [The Geometry of Concepts: Sparse Autoencoder Feature Structure](https://arxiv.org/abs/2410.19750)
+
+**发现问题：**
+ Sparse autoencoder 已经能把大语言模型中的高维激活拆成可解释的 feature dictionary，但这些 feature 往往被当成彼此独立的“概念点”来使用。作者想回答的是：这些概念向量本身是否存在可测量的几何结构？如果存在，它是在局部类比关系、中尺度功能区域，还是整体点云形态上体现出来？
+
+**Insight：**
+ 作者把 SAE feature space 看成一个有层级结构的“概念宇宙”：小尺度上，相关概念会形成类似词向量类比的平行四边形或梯形结构；中尺度上，共现或功能相近的 feature 会在空间中形成局部模块，例如 math / code features 像功能脑区一样聚成 lobe；大尺度上，feature 点云并非各向同性，而呈现特征值幂律和随层变化的聚类熵。关键 insight 是：SAE 不只是给出可解释特征清单，还暴露了模型概念表示的几何组织方式。
+
+**任务：**
+ 用于分析 LLM 内部 SAE 特征向量的空间结构。作者从三个尺度展开：在 atomic scale 上，检验概念四元组是否形成 parallelogram / trapezoid，并发现通过 LDA 投影去除 word length 等全局干扰方向后，类比结构和 function vectors 质量会明显提升；在 brain scale 上，用多种 locality metrics 衡量 feature co-occurrence clusters 是否也在几何空间中局部聚集，发现粗粒度共现簇比随机几何显著更局部；在 galaxy scale 上，分析 feature point cloud 的谱结构、特征值幂律和 clustering entropy，发现中间层幂律斜率最陡，说明概念空间整体具有非各向同性的层级组织。整体上，这篇论文把 SAE 可解释性从“识别单个 feature”推进到“刻画 feature universe 的几何结构”。
+
