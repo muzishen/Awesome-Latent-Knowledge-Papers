@@ -25,6 +25,7 @@
 | E-015 | [Into the Gray Zone: Domain Contexts Can Blur LLM Safety Boundaries](#e-015) | 2026 | arXiv preprint | 安全灰区上下文 |
 | E-016 | [Towards Intrinsic Interpretability of Large Language Models: A Survey of Design Principles and Architectures](#e-016) | 2026 | arXiv preprint | 内生可解释性综述 |
 | E-017 | [Assessing the Creativity of Large Language Models: Testing, Limits, and New Frontiers](#e-017) | 2026 | arXiv preprint | 创造力评估有效性 |
+| E-018 | [Extracting Training Data from Diffusion Language Models via Infilling](#e-018) | 2026 | arXiv preprint | DLM 训练数据抽取评估 |
 
 ---
 
@@ -392,3 +393,16 @@
 
 结果显示，DRAT 是第一个能显著预测 scientific ideation 的自动化测试，在 LiveIdeaBench 上达到显著 validity 和 specificity；并且它的效果不能简单由 DAT \+ RAT 的线性组合替代，说明“同时做发散和收敛”比单独测两种能力再相加更有效。总体上，这篇文章把 LLM 创造力评估从“套用人类创造力测试”推进到“验证测试是否真的预测创造性成果，并区分创造力与通用能力”的更严谨框架。
 
+
+<a id="e-018"></a>
+
+### E-018. [Extracting Training Data from Diffusion Language Models via Infilling](https://arxiv.org/pdf/2605.24173)
+
+**发现问题：**
+ 现有训练数据抽取研究主要沿用自回归语言模型的 prefix-conditioned extraction：给模型一段前缀，看它是否续写出训练样本。但扩散语言模型不是严格从左到右生成，而是可以在任意位置对 masked tokens 去噪和补全。因此，只用前缀探测 DLM 的记忆泄露风险，会系统性低估它们通过中间、边缘、随机位置或敏感实体补全而泄露训练数据的能力。
+
+**Insight：**
+ 论文的核心 insight 是：评估 DLM 记忆与数据泄露，必须匹配它的双向补全归纳偏置。作者提出 **infilling extraction**，把训练样本中的任意位置按 binary mask 遮掉，让 DLM 根据未遮掉的上下文重构被遮部分；如果重构回原训练序列，就视为抽取成功。这个协议包含 prefix-only probing，但比它更一般。实验显示，mask geometry 本身决定可抽取性：edge-conditioned masks 最多能比 prefix-conditioned masks 多抽取约 3 倍的逐字训练序列；双向上下文还打开了自回归模型不具备的泄露通道，例如从 response 反推 user prompt，或在已有脱敏文本的情况下补回被遮盖的邮箱等 PII。
+
+**任务：**
+ 这篇论文用于系统评估扩散语言模型的训练数据泄露与隐私风险。作者在 LLaDA-8B 和 Dream-7B 上，覆盖 five extraction modes、full fine-tuning / LoRA / SFT 三种训练暴露方式，以及 MIMIR Pile、Enron email、Tulu3 三类语料，分别测试逐字泄露、PII 补全和 instruction tuning 场景下的 prompt/response 泄露。结果表明，DLM 的泄露风险不能只靠传统前缀抽取来判断；解码步数、semi-autoregressive block size、temperature、remasking strategy 等推理参数会显著影响抽取表现，而后续 SFT 也不能完全消除先前训练阶段形成的记忆。小红书来源是二手分享，已按 arXiv 公开论文页信息为准收录。
