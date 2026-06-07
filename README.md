@@ -5,7 +5,7 @@ A curated reading list on latent knowledge in large models, organized into three
 |---|---|---|
 | D. 发现与探测 / Discovery & Probing | [discovery_probing.md](discovery_probing.md) | 24 papers |
 | I. 干预和转移 / Intervention & Transfer | [intervention_transfer.md](intervention_transfer.md) | 27 papers |
-| E. 评估与校准 / Evaluation & Calibration | [evaluation_calibration.md](evaluation_calibration.md) | 17 papers |
+| E. 评估与校准 / Evaluation & Calibration | [evaluation_calibration.md](evaluation_calibration.md) | 18 papers |
 
 ## Paper Overview
 
@@ -91,3 +91,4 @@ A curated reading list on latent knowledge in large models, organized into three
 | E-015 | [Into the Gray Zone: Domain Contexts Can Blur LLM Safety Boundaries](evaluation_calibration.md#e-015) | 2026 | arXiv preprint | 安全灰区上下文 |
 | E-016 | [Towards Intrinsic Interpretability of Large Language Models: A Survey of Design Principles and Architectures](evaluation_calibration.md#e-016) | 2026 | arXiv preprint | 内生可解释性综述 |
 | E-017 | [Assessing the Creativity of Large Language Models: Testing, Limits, and New Frontiers](evaluation_calibration.md#e-017) | 2026 | arXiv preprint | 创造力评估有效性 |
+| E-018 | [Extracting Training Data from Diffusion Language Models via Infilling](evaluation_calibration.md#e-018) | 2026 | arXiv preprint | DLM 训练数据抽取评估 |
