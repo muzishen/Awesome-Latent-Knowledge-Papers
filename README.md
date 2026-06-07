@@ -3,7 +3,7 @@ A curated reading list on latent knowledge in large models, organized into three
 ## Topics
 | Topic | File | Scope |
 |---|---|---|
-| D. 发现与探测 / Discovery & Probing | [discovery_probing.md](discovery_probing.md) | 23 papers |
+| D. 发现与探测 / Discovery & Probing | [discovery_probing.md](discovery_probing.md) | 24 papers |
 | I. 干预和转移 / Intervention & Transfer | [intervention_transfer.md](intervention_transfer.md) | 26 papers |
 | E. 评估与校准 / Evaluation & Calibration | [evaluation_calibration.md](evaluation_calibration.md) | 17 papers |
 
