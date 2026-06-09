@@ -3,7 +3,7 @@ A curated reading list on latent knowledge in large models, organized into three
 ## Topics
 | Topic | File | Scope |
 |---|---|---|
-| D. 发现与探测 / Discovery & Probing | [discovery_probing.md](discovery_probing.md) | 24 papers |
+| D. 发现与探测 / Discovery & Probing | [discovery_probing.md](discovery_probing.md) | 25 papers |
 | I. 干预和转移 / Intervention & Transfer | [intervention_transfer.md](intervention_transfer.md) | 27 papers |
 | E. 评估与校准 / Evaluation & Calibration | [evaluation_calibration.md](evaluation_calibration.md) | 18 papers |
 
@@ -37,6 +37,7 @@ A curated reading list on latent knowledge in large models, organized into three
 | D-022 | [When Looking Is Not Enough: Visual Attention Structure Reveals Hallucination in MLLMs](discovery_probing.md#d-022) | 2026 | arXiv preprint | 视觉注意力幻觉 |
 | D-023 | [Mechanistic Data Attribution: Tracing the Training Origins of Interpretable LLM Units](discovery_probing.md#d-023) | 2026 | arXiv preprint | 训练数据到电路 |
 | D-024 | [The Geometry of Concepts: Sparse Autoencoder Feature Structure](discovery_probing.md#d-024) | 2025 | Entropy | SAE 概念几何 |
+| D-025 | [A critical initialization for biological neural networks](discovery_probing.md#d-025) | 2026 | Nature | 生物网络临界初始化 |
 
 ### I. 干预和转移 / Intervention & Transfer
 
