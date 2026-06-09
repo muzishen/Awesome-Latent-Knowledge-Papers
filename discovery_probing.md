@@ -32,6 +32,7 @@
 | D-022 | [When Looking Is Not Enough: Visual Attention Structure Reveals Hallucination in MLLMs](#d-022) | 2026 | arXiv preprint | 视觉注意力幻觉 |
 | D-023 | [Mechanistic Data Attribution: Tracing the Training Origins of Interpretable LLM Units](#d-023) | 2026 | arXiv preprint | 训练数据到电路 |
 | D-024 | [The Geometry of Concepts: Sparse Autoencoder Feature Structure](#d-024) | 2025 | Entropy | SAE 概念几何 |
+| D-025 | [A critical initialization for biological neural networks](#d-025) | 2026 | Nature | 生物网络临界初始化 |
 
 ---
 
@@ -478,3 +479,15 @@
 **任务：**
  用于分析 LLM 内部 SAE 特征向量的空间结构。作者从三个尺度展开：在 atomic scale 上，检验概念四元组是否形成 parallelogram / trapezoid，并发现通过 LDA 投影去除 word length 等全局干扰方向后，类比结构和 function vectors 质量会明显提升；在 brain scale 上，用多种 locality metrics 衡量 feature co-occurrence clusters 是否也在几何空间中局部聚集，发现粗粒度共现簇比随机几何显著更局部；在 galaxy scale 上，分析 feature point cloud 的谱结构、特征值幂律和 clustering entropy，发现中间层幂律斜率最陡，说明概念空间整体具有非各向同性的层级组织。整体上，这篇论文把 SAE 可解释性从“识别单个 feature”推进到“刻画 feature universe 的几何结构”。
 
+<a id="d-025"></a>
+
+### D-025. [A critical initialization for biological neural networks](https://www.nature.com/articles/s41586-026-10528-1)
+
+**发现问题：**
+ 大脑自发产生的、跨脑区协调的神经活动会持续超过单个神经元的生物物理时间尺度，并呈现出方差随主成分序号幂律下降、慢时间尺度集中在高方差模式等宏观结构。但现有解释往往停留在“临界态”或“混沌态”的概念层面，缺少一个能同时解释神经群体活动谱结构、时间动力学和计算功能的机制模型。
+
+**Insight：**
+ 作者提出，生物神经网络的自发活动可能对应一种“临界初始化”：随机连接矩阵经过临界归一化后，尤其在近似对称的相互作用下，会自然产生接近真实神经记录的幂律方差谱和慢时间尺度结构。这个发现把脑内自发活动理解为一种可计算的初始动力学状态，而不只是背景噪声。关键直觉是：大脑可能利用对称、临界归一化的随机动力学，形成一个高维、慢衰减、适合记忆和动态计算的 reservoir。
+
+**任务：**
+ 这篇论文用于解释和检验生物神经网络中自发活动的内部动力学结构。作者用随机矩阵动力学和 Ornstein-Uhlenbeck 类线性随机过程建模 spontaneous activity，并比较对称与非对称随机连接在方差谱、时间自相关、DMD 特征值和工作记忆解码任务上的差异。实验数据包括小鼠皮层和海马 CA1 的大规模双光子钙成像、Neuropixels 电生理记录，以及公开神经数据集。结果显示，真实神经记录的幂律谱、慢时间尺度和动力学特征更接近“临界归一化的对称随机网络”，而这种初始化还能在固定随机动力学加简单读出器的设置下支持延迟记忆检索。整体上，论文把 spontaneous brain activity 从“待解释的背景活动”推进为“神经网络计算前的关键初始化状态”。
